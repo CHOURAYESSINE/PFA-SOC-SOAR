@@ -54,3 +54,13 @@ L'ancien workflow est présent dans la liste mais son chargement individuel renv
 Un événement synthétique utilisant une IP réservée à la documentation a été soumis à cette copie en conservant les entrées existantes de l'alias. Shuffle a accepté l'exécution, mais celle-ci est restée EXECUTING avec zéro résultat d'action. Une lecture ultérieure de l'alias pfSense a confirmé que l'IP de test n'y figurait pas. L'exécution en attente a ensuite été annulée.
 
 Ce test révèle un problème d'exécution Shuffle à diagnostiquer dans les conteneurs/workers. Il ne valide ni un nouveau blocage ni un nouvel enregistrement PostgreSQL. L'accès Linux à shuffle_grafana est nécessaire pour consulter les conteneurs et leurs journaux. La copie de test est conservée pour reprendre la validation après réparation.
+
+## Validation après réparation OpenSearch
+
+Les alias OpenSearch nécessaires ont été corrigés après sauvegarde des documents et contrôle du nombre d'identifiants uniques. Les index d'origine sont conservés. Le workflow original se charge désormais en HTTP 200.
+
+Une branche provenant d'un déclencheur absent a été retirée de la copie de validation sans Gmail. La nouvelle exécution a terminé en FINISHED : mise à jour de l'alias pfSense, application du filtrage et insertion PostgreSQL toutes SUCCESS avec HTTP 200. Une lecture de l'alias a confirmé la présence de l'IP réservée au test. Une lecture PostgreSQL a confirmé un nouvel incident correspondant à cet événement synthétique.
+
+L'IP de test a ensuite été retirée de l'alias, avec réapplication du filtrage en HTTP 200 et vérification de son absence. Les anciennes entrées sont conservées, ainsi que l'incident de validation. Aucune action Gmail n'était présente dans la copie testée.
+
+La détection ICMP réelle dans Snort et l'orchestration synthétique ont été vérifiées séparément. Ce résultat ne prouve pas une attaque distante suivie d'un blocage effectif du trafic. L'import des modèles dans une instance vierge reste également non validé.
