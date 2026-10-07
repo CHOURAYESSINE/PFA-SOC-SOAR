@@ -31,6 +31,11 @@ tail -n 0 -F "$ALERT_FILE" | while IFS= read -r line; do
   is_soc_alert "$line" || continue
   sid="$(printf '%s\n' "$line" | sed -n 's/.*\[1:\([0-9][0-9]*\):[0-9][0-9]*\].*/\1/p')"
   src="$(extract_src "$line")"
+  # Set protected infrastructure addresses in a space-separated environment variable.
+  if [[ " ${PROTECTED_IPS:-} " == *" $src "* ]]; then
+    printf '%s ignored infrastructure src=%s\n' "$(date -Is)" "$src" >> "$LOG_FILE"
+    continue
+  fi
   msg="$(extract_msg "$line")"
   msg="$(printf '%s\n' "$msg" | sed 's/^\[1:[0-9][0-9]*:[0-9][0-9]*\] *//')"
   [ -n "$msg" ] || msg="selected_snort_alert"

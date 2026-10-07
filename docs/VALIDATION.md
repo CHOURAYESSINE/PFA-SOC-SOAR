@@ -38,3 +38,11 @@ Ces résultats valident le retour de l'accès réseau Windows vers Shuffle/Grafa
 Les dix requêtes SQL du dashboard publié ont été exécutées contre la source PostgreSQL du laboratoire via l'API Grafana. Toutes ont retourné un statut 200 sans erreur : total des incidents, IP uniques bloquées, dernière alerte, alertes High, chronologie, types d'attaques, IP sources, incidents récents, actions et sévérités. Le test couvre une période d'un an et les données existantes. Il ne prouve pas l'arrivée d'une nouvelle alerte.
 
 L'accès invité VMware reste refusé sans authentification Linux, et VMware Tools ne fournit pas les adresses. Le test de détection Snort et de blocage automatique demeure en attente d'une session Linux accessible.
+
+## Réparation du watcher et détection réelle
+
+La configuration Snort a été validée dans la VM (Snort 2.9.15.1). Après remise en marche du réseau et redémarrage, Snort et snort-shuffle-watcher sont actifs. Le watcher du laboratoire a été sauvegardé puis corrigé pour transmettre directement vers le webhook Shuffle sur son interface DMZ. Le frontend Shuffle répond HTTP 200 depuis Snort.
+
+Un test ICMP réel a produit de nouvelles alertes dans le journal Snort. Les adresses des composants du laboratoire sont désormais exclues du blocage dans le watcher actif. Le test a confirmé trois entrées de journal « ignored infrastructure » pour la source du capteur : aucune transmission de ces alertes ne doit être interprétée comme un blocage validé.
+
+Le script public utilise PROTECTED_IPS (liste séparée par espaces) pour configurer ces exclusions sans imposer le plan d'adressage privé. Nettoyer également la liste blocked_ips.txt existante avant remise en service. La réception effective du webhook, l'enregistrement d'un nouvel incident et le blocage d'une machine de test distincte restent à vérifier.
