@@ -32,3 +32,9 @@ Contrôles réalisés après réparation :
 - Les trois tests automatisés du dépôt réussissent encore après ajout des définitions VMware.
 
 Ces résultats valident le retour de l'accès réseau Windows vers Shuffle/Grafana et la lecture PostgreSQL. Ils ne valident pas une nouvelle attaque, la capture Snort, l'exécution du workflow ou un nouveau blocage pfSense. VMware Tools reste indisponible dans les VM Ubuntu ; l'accès aux sessions Linux est encore nécessaire pour ces vérifications et pour tester les imports des modèles anonymisés.
+
+## Vérification des requêtes du dashboard
+
+Les dix requêtes SQL du dashboard publié ont été exécutées contre la source PostgreSQL du laboratoire via l'API Grafana. Toutes ont retourné un statut 200 sans erreur : total des incidents, IP uniques bloquées, dernière alerte, alertes High, chronologie, types d'attaques, IP sources, incidents récents, actions et sévérités. Le test couvre une période d'un an et les données existantes. Il ne prouve pas l'arrivée d'une nouvelle alerte.
+
+L'accès invité VMware reste refusé sans authentification Linux, et VMware Tools ne fournit pas les adresses. Le test de détection Snort et de blocage automatique demeure en attente d'une session Linux accessible.
