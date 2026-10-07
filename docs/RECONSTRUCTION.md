@@ -26,9 +26,10 @@ Les sauvegardes comportent également des interfaces NAT, bridgées et host-only
 5. Installer Python 3 et curl sur le capteur. Définir SNORT_RELAY_URL vers le relais et lancer le watcher avec les permissions nécessaires pour lire les alertes et écrire son état.
 6. Sur le poste relais, définir SHUFFLE_WEBHOOK_URL. Le relais écoute par défaut sur 127.0.0.1 ; définir RELAY_BIND sur l'adresse du laboratoire si le capteur est distant et limiter l'accès par pare-feu. Lancer `python scripts/snort_shuffle_relay.py`.
 7. Recréer/importer le workflow Shuffle : webhook, extraction de l'IP, mise à jour de BLOCKED_IPS, application du filtrage et enregistrement de l'incident. Configurer les authentifications dans Shuffle, jamais dans Git.
-8. Configurer PostgreSQL et sa source de données Grafana. Recréer/importer le dashboard des incidents. Les exports exacts et le schéma SQL ne sont pas encore inclus dans ce dépôt.
+8. Configurer PostgreSQL et sa source de données Grafana. Recréer/importer le dashboard des incidents. Consulter docs/IMPORT.md pour les fichiers fournis et la reconfiguration des sources de données.
 9. Dans le laboratoire autorisé, vérifier la chaîne : alerte Snort, réception Shuffle, mise à jour de l'alias, blocage effectif, incident enregistré et affichage Grafana. Conserver les résultats horodatés sans secrets.
 
 ## Exports à ajouter
 
 Exporter le workflow depuis Shuffle, le dashboard JSON depuis Grafana, la configuration pfSense et le schéma PostgreSQL depuis leurs interfaces. Retirer tous les mots de passe, tokens, clés privées, données personnelles et identifiants de webhook. Les fichiers VMware fournis à GitHub doivent être des modèles anonymisés, pas des sauvegardes complètes.
+

@@ -25,4 +25,5 @@ Les endpoints privés ont été remplacés par des variables d'environnement. Le
 
 ## Statut
 
-Ce dépôt documente le laboratoire existant et conserve les scripts retrouvés. Il ne constitue pas une installation entièrement automatique. Les exports du workflow Shuffle, du tableau de bord Grafana et de la configuration pfSense restent à extraire des VM puis à anonymiser avant ajout. Aucune nouvelle validation réseau n'a été exécutée lors de cette publication.
+Ce dépôt documente le laboratoire existant et conserve les scripts retrouvés. Il ne constitue pas une installation entièrement automatique. Les modèles anonymisés Shuffle et pfSense, le dashboard Grafana et un schéma SQL reconstruit sont inclus. Voir `docs/IMPORT.md` pour leur configuration et leurs limites. Aucune nouvelle validation réseau n'a été exécutée lors de cette publication.
+

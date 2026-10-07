@@ -1,0 +1,269 @@
+{
+  "name": "SOC Snort Shuffle - modele anonymise",
+  "description": "Workflow sauvegarde, parametres a reconfigurer avant import et execution.",
+  "id": "bbbfa744-17f8-4eee-abad-6ed29562f202",
+  "start": "00010291-b984-4f0b-89a3-10308f2fa604",
+  "actions": [
+    {
+      "id": "00010291-b984-4f0b-89a3-10308f2fa604",
+      "app_name": "http",
+      "app_version": "1.4.0",
+      "app_id": "2380076b-e1ee-4ce0-b7af-8e1db6a40c63",
+      "name": "PATCH",
+      "label": "http_1",
+      "position": {
+        "x": 304.02925870225386,
+        "y": 870.5701212208543
+      },
+      "authentication_id": "",
+      "parameters": [
+        {
+          "name": "url",
+          "value": "CONFIGURE_URL",
+          "variant": ""
+        },
+        {
+          "name": "body",
+          "value": "CONFIGURE_BODY",
+          "variant": ""
+        },
+        {
+          "name": "headers",
+          "value": "CONFIGURE_HEADERS",
+          "variant": ""
+        },
+        {
+          "name": "username",
+          "value": "CONFIGURE_USERNAME",
+          "variant": ""
+        },
+        {
+          "name": "password",
+          "value": "CONFIGURE_PASSWORD",
+          "variant": ""
+        },
+        {
+          "name": "verify",
+          "value": "CONFIGURE_VERIFY",
+          "variant": ""
+        },
+        {
+          "name": "http_proxy",
+          "value": "CONFIGURE_HTTP_PROXY",
+          "variant": ""
+        },
+        {
+          "name": "https_proxy",
+          "value": "CONFIGURE_HTTPS_PROXY",
+          "variant": ""
+        },
+        {
+          "name": "timeout",
+          "value": "CONFIGURE_TIMEOUT",
+          "variant": ""
+        }
+      ]
+    },
+    {
+      "id": "5c069ce0-b5b3-42fc-be92-4f580c5b034c",
+      "app_name": "http",
+      "app_version": "1.4.0",
+      "app_id": "2380076b-e1ee-4ce0-b7af-8e1db6a40c63",
+      "name": "POST",
+      "label": "http_2",
+      "position": {
+        "x": 732.6006872736823,
+        "y": 1127.7129783637115
+      },
+      "authentication_id": "",
+      "parameters": [
+        {
+          "name": "url",
+          "value": "CONFIGURE_URL",
+          "variant": ""
+        },
+        {
+          "name": "body",
+          "value": "CONFIGURE_BODY",
+          "variant": ""
+        },
+        {
+          "name": "headers",
+          "value": "CONFIGURE_HEADERS",
+          "variant": ""
+        },
+        {
+          "name": "username",
+          "value": "CONFIGURE_USERNAME",
+          "variant": ""
+        },
+        {
+          "name": "password",
+          "value": "CONFIGURE_PASSWORD",
+          "variant": ""
+        },
+        {
+          "name": "verify",
+          "value": "CONFIGURE_VERIFY",
+          "variant": ""
+        },
+        {
+          "name": "http_proxy",
+          "value": "CONFIGURE_HTTP_PROXY",
+          "variant": ""
+        },
+        {
+          "name": "https_proxy",
+          "value": "CONFIGURE_HTTPS_PROXY",
+          "variant": ""
+        },
+        {
+          "name": "timeout",
+          "value": "CONFIGURE_TIMEOUT",
+          "variant": ""
+        }
+      ]
+    },
+    {
+      "id": "31c8c32f-0ce2-4091-a795-a6e4f18233ac",
+      "app_name": "http",
+      "app_version": "1.4.0",
+      "app_id": "2380076b-e1ee-4ce0-b7af-8e1db6a40c63",
+      "name": "POST",
+      "label": "http_3_grafana_postgres_insert",
+      "position": {
+        "x": 1110.001,
+        "y": 1130.001
+      },
+      "authentication_id": "",
+      "parameters": [
+        {
+          "name": "url",
+          "value": "CONFIGURE_URL",
+          "variant": ""
+        },
+        {
+          "name": "body",
+          "value": "CONFIGURE_BODY",
+          "variant": ""
+        },
+        {
+          "name": "headers",
+          "value": "CONFIGURE_HEADERS",
+          "variant": ""
+        },
+        {
+          "name": "username",
+          "value": "CONFIGURE_USERNAME",
+          "variant": ""
+        },
+        {
+          "name": "password",
+          "value": "CONFIGURE_PASSWORD",
+          "variant": ""
+        },
+        {
+          "name": "verify",
+          "value": "CONFIGURE_VERIFY",
+          "variant": ""
+        },
+        {
+          "name": "http_proxy",
+          "value": "CONFIGURE_HTTP_PROXY",
+          "variant": ""
+        },
+        {
+          "name": "https_proxy",
+          "value": "CONFIGURE_HTTPS_PROXY",
+          "variant": ""
+        },
+        {
+          "name": "timeout",
+          "value": "CONFIGURE_TIMEOUT",
+          "variant": ""
+        }
+      ]
+    },
+    {
+      "id": "19dbf065-6f81-49d7-ae25-c6fa9d31f1a1",
+      "app_name": "Gmail",
+      "app_version": "1.1.0",
+      "app_id": "a33e12b001d4ee74ea542cfdeacb8b43",
+      "name": "post_send_mail",
+      "label": "gmail_soc_alert",
+      "position": {
+        "x": 1490.001,
+        "y": 1130.001
+      },
+      "authentication_id": "",
+      "parameters": [
+        {
+          "name": "url",
+          "value": "CONFIGURE_URL",
+          "variant": "STATIC_VALUE"
+        },
+        {
+          "name": "body",
+          "value": "CONFIGURE_BODY",
+          "variant": "STATIC_VALUE"
+        },
+        {
+          "name": "userId",
+          "value": "CONFIGURE_USERID",
+          "variant": "STATIC_VALUE"
+        },
+        {
+          "name": "headers",
+          "value": "CONFIGURE_HEADERS",
+          "variant": "STATIC_VALUE"
+        },
+        {
+          "name": "queries",
+          "value": "CONFIGURE_QUERIES",
+          "variant": "STATIC_VALUE"
+        },
+        {
+          "name": "ssl_verify",
+          "value": "CONFIGURE_SSL_VERIFY",
+          "variant": "STATIC_VALUE"
+        },
+        {
+          "name": "to_file",
+          "value": "CONFIGURE_TO_FILE",
+          "variant": "STATIC_VALUE"
+        }
+      ]
+    }
+  ],
+  "branches": [
+    {
+      "source_id": "0e2778bc-6aa8-4682-91a3-a99f119b95fa",
+      "destination_id": "00010291-b984-4f0b-89a3-10308f2fa604",
+      "id": "8c7dcba0-499f-45d8-adc4-fd0a74ebedde"
+    },
+    {
+      "source_id": "00010291-b984-4f0b-89a3-10308f2fa604",
+      "destination_id": "5c069ce0-b5b3-42fc-be92-4f580c5b034c",
+      "id": "a98ecdf1-ea13-410a-a156-61aa68380ebd"
+    },
+    {
+      "source_id": "5c069ce0-b5b3-42fc-be92-4f580c5b034c",
+      "destination_id": "31c8c32f-0ce2-4091-a795-a6e4f18233ac",
+      "id": "5cb80d16-8794-4df3-9654-9085df08e46a"
+    },
+    {
+      "source_id": "31c8c32f-0ce2-4091-a795-a6e4f18233ac",
+      "destination_id": "19dbf065-6f81-49d7-ae25-c6fa9d31f1a1",
+      "id": "37f3d5cf-5dbb-4e7f-af88-377f3b35f3c4"
+    }
+  ],
+  "triggers": [
+    {
+      "id": "0e2778bc-6aa8-4682-91a3-a99f119b95fa",
+      "name": "Webhook",
+      "trigger_type": "WEBHOOK",
+      "status": "stopped",
+      "parameters": []
+    }
+  ]
+}

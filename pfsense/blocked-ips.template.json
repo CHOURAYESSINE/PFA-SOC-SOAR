@@ -1,0 +1,26 @@
+{
+  "alias": {
+    "address": [],
+    "name": "BLOCKED_IPS",
+    "type": "host"
+  },
+  "rules": [
+    {
+      "type": "block",
+      "interface": [
+        "wan"
+      ],
+      "source": "BLOCKED_IPS",
+      "destination": "any"
+    },
+    {
+      "type": "block",
+      "interface": [
+        "lan"
+      ],
+      "source": "BLOCKED_IPS",
+      "destination": "any"
+    }
+  ],
+  "note": "Modele de reference reconstruit pour les regles WAN et LAN documentees ; pas un export XML restaurable."
+}
