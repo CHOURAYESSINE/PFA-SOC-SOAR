@@ -46,3 +46,11 @@ La configuration Snort a été validée dans la VM (Snort 2.9.15.1). Après remi
 Un test ICMP réel a produit de nouvelles alertes dans le journal Snort. Les adresses des composants du laboratoire sont désormais exclues du blocage dans le watcher actif. Le test a confirmé trois entrées de journal « ignored infrastructure » pour la source du capteur : aucune transmission de ces alertes ne doit être interprétée comme un blocage validé.
 
 Le script public utilise PROTECTED_IPS (liste séparée par espaces) pour configurer ces exclusions sans imposer le plan d'adressage privé. Nettoyer également la liste blocked_ips.txt existante avant remise en service. La réception effective du webhook, l'enregistrement d'un nouvel incident et le blocage d'une machine de test distincte restent à vérifier.
+
+## Tentative de validation de l'orchestration
+
+L'ancien workflow est présent dans la liste mais son chargement individuel renvoie HTTP 400 (« Failed finding workflow »). Les tentatives de modification ont été refusées ; aucune suspension de Gmail n'a été appliquée à ce workflow. Une copie distincte « Validation SOC sans notification » a été créée avec trois actions HTTP et sans action Gmail. Cette copie se charge correctement.
+
+Un événement synthétique utilisant une IP réservée à la documentation a été soumis à cette copie en conservant les entrées existantes de l'alias. Shuffle a accepté l'exécution, mais celle-ci est restée EXECUTING avec zéro résultat d'action. Une lecture ultérieure de l'alias pfSense a confirmé que l'IP de test n'y figurait pas. L'exécution en attente a ensuite été annulée.
+
+Ce test révèle un problème d'exécution Shuffle à diagnostiquer dans les conteneurs/workers. Il ne valide ni un nouveau blocage ni un nouvel enregistrement PostgreSQL. L'accès Linux à shuffle_grafana est nécessaire pour consulter les conteneurs et leurs journaux. La copie de test est conservée pour reprendre la validation après réparation.
