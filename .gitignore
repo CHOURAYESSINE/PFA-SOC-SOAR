@@ -1,0 +1,14 @@
+*.vmdk
+*.vdi
+*.ova
+*.ovf
+*.iso
+*.nvram
+*.vmem
+*.vmsn
+*.log
+.env
+.env.*
+__pycache__/
+*.pyc
+private/
