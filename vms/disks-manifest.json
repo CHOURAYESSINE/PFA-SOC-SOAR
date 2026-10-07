@@ -1,0 +1,26 @@
+[
+  {
+    "vm": "meta_f",
+    "disk": "Metasploitable.vmdk",
+    "bytes": 1929838592,
+    "included_in_git": false
+  },
+  {
+    "vm": "pfsense_f",
+    "disk": "FreeBSD version 10 and earlier 64-bit.vmdk",
+    "bytes": 8103919616,
+    "included_in_git": false
+  },
+  {
+    "vm": "shufle_f",
+    "disk": "shuffle_grafana-disk1.vmdk",
+    "bytes": 20778057728,
+    "included_in_git": false
+  },
+  {
+    "vm": "snort_f",
+    "disk": "Ubuntu 64-bit.vmdk",
+    "bytes": 11713314816,
+    "included_in_git": false
+  }
+]

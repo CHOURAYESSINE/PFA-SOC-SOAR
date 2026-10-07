@@ -27,3 +27,7 @@ Les endpoints privés ont été remplacés par des variables d'environnement. Le
 
 Ce dépôt documente le laboratoire existant et conserve les scripts retrouvés. Il ne constitue pas une installation entièrement automatique. Les modèles anonymisés Shuffle et pfSense, le dashboard Grafana et un schéma SQL reconstruit sont inclus. Voir `docs/IMPORT.md` pour leur configuration et leurs limites. Aucune nouvelle validation réseau n'a été exécutée lors de cette publication.
 
+
+## Définitions des VM
+
+Le dossier `vms/` contient quatre fichiers VMware VMX anonymisés et un manifeste des disques. Les disques VMDK restent dans la sauvegarde locale : voir `vms/README.md` avant utilisation. Les résultats de tests réels sont dans `docs/VALIDATION.md`.
