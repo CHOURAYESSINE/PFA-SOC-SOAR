@@ -165,3 +165,9 @@ La console puis la capture fournie confirment le démarrage, la connexion et le 
 
 Le scénario interne a été relancé avec succès : HTTP 200, alertes Snort, trois actions réussies, deux nouveaux incidents, blocage puis HTTP 200 après nettoyage. Voir [l'architecture et les preuves](DEUX-SEGMENTS.md).
 
+
+## Sortie Internet par modem USB Android — 8 octobre 2026
+
+Windows détecte le modem Samsung USB RNDIS ; le Wi-Fi est déconnecté. Le PC répond au contrôle HTTPS Microsoft avec HTTP 200. Shuffle atteignait initialement des routes internes prioritaires et échouait en HTTPS. La route via le NAT VMware a été rétablie puis ajoutée au profil NetworkManager actif d'ens33. Après réapplication du profil, la route NAT est prioritaire et Gmail HTTPS renvoie 404 sur sa racine (réponse du serveur, pas un envoi de courriel). Docker, Grafana et le service de route sont actifs. Aucun courriel supplémentaire n'a été envoyé.
+
+Preuve : [sortie-internet-usb-shuffle.txt](preuves/sortie-internet-usb-shuffle.txt). Cette validation porte sur la sortie Internet de Shuffle par le PC et son modem USB. Elle ne valide pas un accès public entrant ni une installation sur systèmes vierges. Le profil conserve ses adresses de laboratoire ; les deux segments LAN ne sont pas remplacés par le réseau mobile.
