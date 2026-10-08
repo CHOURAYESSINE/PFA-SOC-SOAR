@@ -1,0 +1,12 @@
+[Unit]
+Description=PFA lab Internet route via existing VMware NAT
+Wants=network-online.target
+After=network-online.target NetworkManager.service
+[Service]
+Type=oneshot
+Environment=PFA_NAT_GATEWAY=192.168.233.2 PFA_NAT_INTERFACE=ens33 PFA_NAT_METRIC=50
+EnvironmentFile=-/etc/pfa-internet-route.env
+ExecStart=/usr/sbin/ip route replace default via ${PFA_NAT_GATEWAY} dev ${PFA_NAT_INTERFACE} metric ${PFA_NAT_METRIC}
+RemainAfterExit=yes
+[Install]
+WantedBy=multi-user.target

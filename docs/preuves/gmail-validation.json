@@ -1,13 +1,20 @@
 {
-  "successful_delivery_verified": false,
-  "next_step": "Reconnect Gmail authentication in Shuffle",
+  "route_service_active": true,
   "date": "2026-10-08",
-  "gmail_auth_verification_http": 401,
-  "action_status": "SUCCESS",
-  "application_success": false,
+  "google_http_status": 200,
   "workflow_status": "FINISHED",
-  "executions_launched": 1,
-  "google_https_reachable_after_route_repair": true,
-  "application_reason": "API timeout",
-  "authentication_verification_method": "Shuffle Gmail app authenticated targeted read; Google response 401 UNAUTHENTICATED invalid_token"
+  "successful_send_verified": true,
+  "send_attempts": 2,
+  "sent_lookup_http": 200,
+  "reboot_tested": false,
+  "gmail_labels": [
+    "SENT"
+  ],
+  "successful_messages": 1,
+  "route_service_enabled": true,
+  "recipient_inbox_receipt_verified": false,
+  "google_message_id_returned": true,
+  "action_status": "SUCCESS",
+  "matching_sent_test_messages": 1,
+  "original_gmail_authentication_repaired": true
 }

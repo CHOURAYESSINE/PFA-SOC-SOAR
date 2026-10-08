@@ -124,3 +124,13 @@ Diagnostic et réparation : la route par défaut de shuffle_grafana privilégiai
 La première vérification directe ne permettait pas de conclure : Shuffle masque les secrets retournés par son API d'administration. Une seconde vérification a été exécutée à travers l'application Gmail de Shuffle, avec l'authentification enregistrée et une recherche limitée au courriel de test autorisé. Cette action de lecture a terminé avec HTTP 401, UNAUTHENTICATED / invalid_token, dans la réponse réelle de Google. L'authentification doit donc être reconnectée dans Shuffle. Aucun envoi réussi ni réception n'est annoncé. Aucune nouvelle exécution d'envoi n'a été lancée pour éviter un doublon. Le test attend la reconnexion du compte.
 
 Après la reprise utilisateur, aucune nouvelle authentification Gmail utilisable n'a été constatée. Le formulaire Authenticate Gmail a été ouvert : Client ID et Client Secret sont requis, et le bouton Authenticate reste désactivé tant qu'ils ne sont pas renseignés. Le test de lecture ne renvoie aucun contenu de courriel, seulement l'erreur d'authentification. Aucun second envoi n'a été lancé.
+
+## Gmail réparé et envoi vérifié — 8 octobre 2026
+
+Après réparation de l'accès Internet de shuffle_grafana, les anciennes connexions disposant d'un renouvellement OAuth ont été testées par une recherche ciblée du courriel de validation, sans envoi. L'une d'elles a répondu HTTP 200 avec zéro message correspondant. Elle a été sélectionnée dans le workflow de test à une seule action.
+
+Le courriel unique autorisé a ensuite été envoyé : workflow FINISHED, action SUCCESS et réponse Google HTTP 200 avec id, threadId et labelIds. Une nouvelle recherche ciblée dans les éléments envoyés a répondu HTTP 200 et trouvé exactement un message correspondant. L'envoi est donc confirmé ; la réception dans la boîte du destinataire n'a pas été consultée. Il y a eu deux tentatives au total, dont la première avait expiré avant réparation, et un seul message de test confirmé.
+
+La même authentification fonctionnelle a été sélectionnée pour l'action Gmail du workflow original après sauvegarde de celui-ci. Ses quatre actions, branches, paramètres et destinataires existants ont été conservés. Le workflow original n'a pas été exécuté pour cette modification.
+
+La correction de route est désormais installée comme service systemd pfa-internet-route, enabled et active. L'accès HTTPS Google répond après activation. Le redémarrage complet de la VM n'a pas été testé. Le modèle du service est publié dans systemd/ ; adapter la passerelle et l'interface avant utilisation sur un autre poste. Les identifiants OAuth, secrets et journaux privés restent hors du dépôt.
