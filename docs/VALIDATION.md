@@ -134,3 +134,20 @@ Le courriel unique autorisé a ensuite été envoyé : workflow FINISHED, action
 La même authentification fonctionnelle a été sélectionnée pour l'action Gmail du workflow original après sauvegarde de celui-ci. Ses quatre actions, branches, paramètres et destinataires existants ont été conservés. Le workflow original n'a pas été exécuté pour cette modification.
 
 La correction de route est désormais installée comme service systemd pfa-internet-route, enabled et active. L'accès HTTPS Google répond après activation. Le redémarrage complet de la VM n'a pas été testé. Le modèle du service est publié dans systemd/ ; adapter la passerelle et l'interface avant utilisation sur un autre poste. Les identifiants OAuth, secrets et journaux privés restent hors du dépôt.
+## Fonctionnement après redémarrage vérifié — 8 octobre 2026
+
+Les VM Snort et shuffle_grafana ont été redémarrées proprement. Le changement de leur boot_id a été vérifié. Snort et le watcher sont revenus active, avec l'adresse du capteur conservée.
+
+Le premier démarrage de shuffle_grafana a révélé un retard provoqué par la reconnexion DHCP d'une ancienne interface ens34, sans serveur DHCP accessible. Après sauvegarde des profils NetworkManager, son profil a été placé en autoconnect=no. Les interfaces LAN/DMZ/NAT utiles ont été conservées. Un second redémarrage complet de shuffle_grafana a confirmé le retour automatique de Docker, Grafana, du service de route et des cinq conteneurs actifs. La route NAT de priorité 50 est présente et Google répond en HTTPS. Grafana annonce database=ok.
+
+La chaîne WAN privée a ensuite été rejouée : HTTP 200 initial, nouvelle alerte SQL SID 1003, exécution FINISHED avec trois actions SUCCESS, blocage HTTP 000/code curl 28 et compteur PostgreSQL passé de 1 à 2 pour la source de test. L'orchestration a pris plus que les cinq secondes de la première vérification : le blocage a été confirmé après la fin effective du workflow. L'alias a été restauré et l'accès est revenu à HTTP 200. Gmail a été temporairement retiré pour ce test puis restauré avec son authentification réparée ; aucun nouveau courriel n'a été envoyé.
+
+Voir preuves/postboot-validation.json et les sorties associées. Cette validation couvre le redémarrage des deux VM applicatives critiques ; pfSense, Kali et Metasploitable n'ont pas été redémarrées dans ce scénario.
+
+## Vérification des sauvegardes de reconstruction
+
+Le contrôle scripts/check_vm_backups.py confirme, pour les quatre VM : présence des disques locaux, taille conforme au manifeste et référence disque VMX correspondante. Les lecteurs CD sans disque publié ont été désactivés dans les définitions publiques afin de ne pas dépendre d'un média absent.
+
+VMware vdiskmanager -e confirme la cohérence des chaînes des sauvegardes pfSense, Shuffle/Grafana et Snort. Le disque Metasploitable est utilisé par la VM cible active : le verrou empêche ce contrôle hors ligne. La tentative d'arrêt gracieux sans VMware Tools n'a pas abouti ; seule la requête de gestion bloquée a été annulée, la VM a été conservée en fonctionnement. Ce verrou ne permet pas de conclure à une corruption.
+
+Les contrôles de sauvegarde ne prouvent pas une réinstallation complète sur des OS vierges. Aucun ISO d'installation complet n'a été identifié dans les sauvegardes examinées ; le poste dispose d'environ 2,9 Go de RAM libre, insuffisants pour démarrer en parallèle un second laboratoire aux ressources publiées. Le test Internet public reste en attente d'une adresse publique ou d'un domaine redirigé vers pfSense.

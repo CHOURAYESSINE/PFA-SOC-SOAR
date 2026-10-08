@@ -1,0 +1,25 @@
+{
+  "new_incidents": 1,
+  "route_restored_automatically": true,
+  "snort_alert_sid": 1003,
+  "blocked_http": "000",
+  "baseline_http": 200,
+  "services_started_automatically": true,
+  "workflow_status": "FINISHED",
+  "shuffle_second_boot_id_changed": true,
+  "blocked_curl_exit": 28,
+  "incident_count_before": 1,
+  "restored_http": 200,
+  "http_actions": [
+    "SUCCESS",
+    "SUCCESS",
+    "SUCCESS"
+  ],
+  "incident_count_after": 2,
+  "original_workflow_restored": true,
+  "test_gmail_notifications_sent": 0,
+  "date": "2026-10-08",
+  "google_https_http": 404,
+  "snort_boot_id_changed": true,
+  "shuffle_boot_id_changed": true
+}

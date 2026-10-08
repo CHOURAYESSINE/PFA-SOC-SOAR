@@ -1,0 +1,26 @@
+[
+  {
+    "vm": "meta_f",
+    "disk_exists": true,
+    "size_matches_manifest": true,
+    "vmx_disk_reference_matches": true
+  },
+  {
+    "vm": "pfsense_f",
+    "disk_exists": true,
+    "size_matches_manifest": true,
+    "vmx_disk_reference_matches": true
+  },
+  {
+    "vm": "shufle_f",
+    "disk_exists": true,
+    "size_matches_manifest": true,
+    "vmx_disk_reference_matches": true
+  },
+  {
+    "vm": "snort_f",
+    "disk_exists": true,
+    "size_matches_manifest": true,
+    "vmx_disk_reference_matches": true
+  }
+]

@@ -1,0 +1,2 @@
+WAN restored HTTP 200
+curl_exit=0
