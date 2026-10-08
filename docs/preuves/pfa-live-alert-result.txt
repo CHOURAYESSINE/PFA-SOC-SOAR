@@ -1,0 +1,8 @@
+10/07-18:28:43.288817  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.107 -> 10.1.2.100
+10/07-18:28:43.288817  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.107 -> 10.1.2.100
+10/07-18:28:44.289817  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.107 -> 10.1.2.100
+10/07-18:28:44.289817  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.107 -> 10.1.2.100
+2026-10-07T18:28:44-07:00 dedupe sid=1000002 src=10.1.1.107 msg=PING vers Metasploitable detecte
+2026-10-07T18:28:44-07:00 dedupe sid=100001 src=10.1.1.107 msg=ICMP ping detected
+2026-10-07T18:28:44-07:00 dedupe sid=1000002 src=10.1.1.107 msg=PING vers Metasploitable detecte
+2026-10-07T18:28:44-07:00 dedupe sid=100001 src=10.1.1.107 msg=ICMP ping detected

@@ -64,3 +64,25 @@ Une branche provenant d'un déclencheur absent a été retirée de la copie de v
 L'IP de test a ensuite été retirée de l'alias, avec réapplication du filtrage en HTTP 200 et vérification de son absence. Les anciennes entrées sont conservées, ainsi que l'incident de validation. Aucune action Gmail n'était présente dans la copie testée.
 
 La détection ICMP réelle dans Snort et l'orchestration synthétique ont été vérifiées séparément. Ce résultat ne prouve pas une attaque distante suivie d'un blocage effectif du trafic. L'import des modèles dans une instance vierge reste également non validé.
+
+## Validation réelle de la chaîne — 8 octobre 2026
+
+Le scénario utilise Kali (10.1.1.107) sur le LAN privé de pfSense et Metasploitable (10.1.2.100) dans la DMZ. L'interface de test Kali a été raccordée au segment LAN VMware et une route vers la DMZ a été ajoutée.
+
+| Étape | Résultat observé |
+|---|---|
+| Accès HTTP initial à Metasploitable depuis Kali | HTTP 200 |
+| Trafic ICMP de Kali vers Metasploitable | Nouvelles alertes Snort, SID 1000002 et 100001 |
+| Exécution du workflow original, sans Gmail pendant le test | Deux exécutions FINISHED ; les trois actions HTTP sont SUCCESS |
+| Mise à jour et application du filtrage pfSense | IP de Kali présente dans BLOCKED_IPS |
+| Nouvelle connexion HTTP après blocage | HTTP 000, code curl 28 : expiration du délai |
+| Lecture PostgreSQL par Grafana | Deux nouveaux incidents pour la source Kali dans les 15 dernières minutes |
+| Nettoyage et nouvelle connexion HTTP | Alias initial restauré, HTTP 200, code curl 0 |
+
+L'action Gmail et ses branches ont été temporairement retirées du workflow original pour ce test, puis restaurées. Aucun courriel de test n'a été envoyé. L'IP Kali a également été retirée du fichier de déduplication du watcher. Les anciennes entrées de l'alias ont été conservées.
+
+Les sorties réellement recueillies sont conservées dans [preuves](preuves/). Les horodatages des journaux reflètent l'horloge de la VM, différente de celle du poste hôte ; ils n'ont pas été réécrits.
+
+Le script watcher publié passe `bash -n`. Les règles Snort publiées ont été chargées dans une copie temporaire de la configuration de la VM : Snort 2.9.15.1 a confirmé « Snort successfully validated the configuration! ». Les trois tests automatisés du dépôt passent également.
+
+Ce test valide le scénario LAN → DMZ du laboratoire et son blocage effectif. Il ne valide pas un scénario WAN/Internet, toutes les règles d'attaque, ni l'installation des modèles sur une instance vierge. Les modèles nécessitent toujours la configuration décrite dans IMPORT.md.
