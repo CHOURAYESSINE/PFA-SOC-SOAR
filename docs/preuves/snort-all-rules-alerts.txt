@@ -1,0 +1,67 @@
+11/14-15:13:20.000000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.000000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.001000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.001000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.002000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.002000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.003000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.003000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.004000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.004000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.005000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.005000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.006000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.006000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.007000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.007000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.008000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.008000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.009000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.009000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.010000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.010000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.011000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.011000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.012000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.012000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.013000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.013000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.014000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.014000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.015000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.015000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.016000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.016000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.017000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.017000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.018000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.018000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.019000  [**] [1:1001010:1] ICMP ping flood detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.019000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.019000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.020000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.020000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.021000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.021000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.022000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.022000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.023000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.023000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.024000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.024000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-15:13:20.044000  [**] [1:1001020:1] TCP SYN port scan detected [**] [Priority: 0] {TCP} 10.1.1.21:40000 -> 10.1.2.100:81
+11/14-15:13:20.044000  [**] [1:1001:2] Nmap SYN scan detected [**] [Priority: 0] {TCP} 10.1.1.21:40000 -> 10.1.2.100:81
+11/14-15:13:20.057000  [**] [1:1001030:1] FTP brute force detected [**] [Priority: 0] {TCP} 10.1.1.22:40000 -> 10.1.2.100:21
+11/14-15:13:20.066000  [**] [1:1001031:1] SSH brute force detected [**] [Priority: 0] {TCP} 10.1.1.23:40000 -> 10.1.2.100:22
+11/14-15:13:20.072000  [**] [1:1002:2] Telnet brute force detected [**] [Priority: 0] {TCP} 10.1.1.24:40000 -> 10.1.2.100:23
+11/14-15:13:20.093000  [**] [1:1001020:1] TCP SYN port scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-15:13:20.093000  [**] [1:1001:2] Nmap SYN scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-15:13:21.013000  [**] [1:1001040:1] HTTP flood detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-15:13:21.013000  [**] [1:1001020:1] TCP SYN port scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-15:13:21.013000  [**] [1:1001:2] Nmap SYN scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-15:13:21.015000  [**] [1:1003:2] SQL injection OR 1=1 [**] [Priority: 0] {TCP} 10.1.1.26:40000 -> 10.1.2.100:80
+11/14-15:13:21.016000  [**] [1:1001041:1] SQL injection OR 1 equals 1 [**] [Priority: 0] {TCP} 10.1.1.27:40000 -> 10.1.2.100:80
+11/14-15:13:21.017000  [**] [1:1004:2] SQL injection union select [**] [Priority: 0] {TCP} 10.1.1.28:40000 -> 10.1.2.100:80
+11/14-15:13:21.018000  [**] [1:1005:2] SQLmap scan detected [**] [Priority: 0] {TCP} 10.1.1.29:40000 -> 10.1.2.100:80
+11/14-15:13:21.019000  [**] [1:1001042:1] Web XSS attempt detected [**] [Priority: 0] {TCP} 10.1.1.30:40000 -> 10.1.2.100:80
+11/14-15:13:21.020000  [**] [1:1001043:1] Command injection attempt detected [**] [Priority: 0] {TCP} 10.1.1.31:40000 -> 10.1.2.100:80

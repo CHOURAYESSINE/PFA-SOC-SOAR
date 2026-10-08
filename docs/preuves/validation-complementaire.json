@@ -1,0 +1,37 @@
+{
+  "snort": {
+    "expected_sids": 15,
+    "benign_case_alerts": 0,
+    "mode": "offline PCAP, checksums disabled, isolated log directory",
+    "observed_sids": 15
+  },
+  "imports": {
+    "postgresql": {
+      "rolled_back": true,
+      "inserted_count": 1
+    },
+    "grafana": {
+      "status": "success",
+      "temporary_copy_removed": true,
+      "panels": 10
+    },
+    "shuffle": {
+      "triggers": 1,
+      "actions": 4,
+      "trigger_status": "stopped",
+      "execution_tested": false
+    }
+  },
+  "date": "2026-10-08",
+  "services": {
+    "snort": "active",
+    "watcher": "active",
+    "grafana_database": "ok",
+    "original_workflow_actions": 4
+  },
+  "wan": {
+    "validated": false,
+    "reason": "Host not connected to the configured WAN private subnet",
+    "http_code": "000"
+  }
+}

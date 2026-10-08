@@ -21,4 +21,4 @@ Créer une base et un utilisateur avec des droits limités, puis appliquer `post
 
 ## Limites de vérification
 
-Les fichiers JSON ont été contrôlés pour leur syntaxe et les identifiants privés connus ont été recherchés. Les VM étaient arrêtées pendant la préparation : aucun import, démarrage de service ou test de bout en bout n'est annoncé comme validé pour ces modèles.
+Les fichiers JSON ont été contrôlés pour leur syntaxe et les identifiants privés connus ont été recherchés. Les imports de la structure Shuffle et du dashboard Grafana, ainsi que le schéma SQL sur une structure temporaire neuve, ont été vérifiés dans le laboratoire le 8 octobre 2026. Le workflow anonymisé reste à paramétrer et la reconstruction complète sur des VM vierges n'est pas validée. Voir VALIDATION.md pour les preuves et limites.
