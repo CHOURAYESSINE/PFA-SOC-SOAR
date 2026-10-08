@@ -1,0 +1,10 @@
+[Unit]
+Description=PFA isolated KVM networks
+Requires=docker.service
+After=network-online.target docker.service
+Wants=network-online.target
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/home/ubuntu/pfa-rebuild/pfa-lab-network.sh start
+ExecStop=/home/ubuntu/pfa-rebuild/pfa-lab-network.sh stop

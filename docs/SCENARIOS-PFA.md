@@ -36,7 +36,7 @@ Preuves : [résumé de la chaîne](preuves/nmap-chain-summary.json), [scan](preu
 
 ## Vérifications supplémentaires distinctes
 
-Le test Internet public entrant reste non réalisé : le modem USB valide une sortie Internet, sans fournir un point d'entrée public redirigé vers pfSense. La reconstruction complète sur systèmes vierges reste non réalisée ; seules les importations des composants et la restauration isolée de Metasploitable2 ont été vérifiées. Ces limites ne doivent pas être confondues avec les scénarios fonctionnels validés ci-dessus.
+L'entrée Internet publique et la reconstruction complète ont été validées sur un laboratoire indépendant OVH. Le démarrage automatique des quatre VM et la chaîne de blocage ont aussi été vérifiés après redémarrage réel du VPS. La source publique est conservée, un nouvel incident est enregistré et l'accès est rétabli après nettoyage. Le port temporaire est fermé. Voir [RECONSTRUCTION.md](RECONSTRUCTION.md) pour la méthode et les preuves ; Metasploitable2 est une image officielle neuve préinstallée.
 ## Test depuis le VPS OVH par tunnel SSH — 8 octobre 2026
 
 Une requête SQL de test a été lancée depuis le VPS vers un port temporaire lié uniquement à son adresse loopback, puis transportée par SSH vers Kali et la cible DMZ à travers pfSense. Aucune cible vulnérable n'a été ouverte publiquement. Snort voit la source LAN de Kali (10.1.1.107), pas l'adresse publique du VPS : ce test valide un initiateur distant et la chaîne LAN/DMZ, pas un filtrage WAN public conservant la source Internet.

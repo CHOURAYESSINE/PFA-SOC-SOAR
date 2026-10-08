@@ -1,0 +1,26 @@
+{
+  "opensearch": {
+    "image_id": "sha256:23297b8d8545e129dd58c254ed08d786dc552410ba772983ad2af31048d2f04b",
+    "digest": "opensearchproject/opensearch@sha256:23297b8d8545e129dd58c254ed08d786dc552410ba772983ad2af31048d2f04b"
+  },
+  "backend": {
+    "image_id": "sha256:6342d3996eb4cad2e927f9af756ba68ff00b9ca8fad26b9642c8bcb0acb21f69",
+    "digest": "ghcr.io/shuffle/shuffle-backend@sha256:6342d3996eb4cad2e927f9af756ba68ff00b9ca8fad26b9642c8bcb0acb21f69"
+  },
+  "frontend": {
+    "image_id": "sha256:18c504a45ce853387275f63170e7df662ec9a2b3dd0f56da7458fda22b7379e0",
+    "digest": "ghcr.io/shuffle/shuffle-frontend@sha256:18c504a45ce853387275f63170e7df662ec9a2b3dd0f56da7458fda22b7379e0"
+  },
+  "orborus": {
+    "image_id": "sha256:5fed3672b8be2c9b6042eaa4da0d1fe321ab93ec9d0264b10e46560242ef2183",
+    "digest": "ghcr.io/shuffle/shuffle-orborus@sha256:5fed3672b8be2c9b6042eaa4da0d1fe321ab93ec9d0264b10e46560242ef2183"
+  },
+  "postgres": {
+    "image_id": "sha256:14bfab572eec6abf65892e1db7c3ba8d41b2a2855c1b143664907d6e146eb6e1",
+    "digest": "postgres@sha256:14bfab572eec6abf65892e1db7c3ba8d41b2a2855c1b143664907d6e146eb6e1"
+  },
+  "grafana": {
+    "image_id": "sha256:5dad0df181cb644a14e13617b913b261a54f7d4fd4510721dba420929f35bea2",
+    "digest": "grafana/grafana@sha256:5dad0df181cb644a14e13617b913b261a54f7d4fd4510721dba420929f35bea2"
+  }
+}

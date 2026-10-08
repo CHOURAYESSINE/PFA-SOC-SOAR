@@ -1,0 +1,18 @@
+[Unit]
+Description=PFA reconstructed container stack
+Requires=docker.service
+Wants=network-online.target
+After=docker.service network-online.target
+StartLimitIntervalSec=0
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+User=ubuntu
+WorkingDirectory=/home/ubuntu/pfa-components
+ExecStart=/usr/bin/sudo /usr/bin/docker-compose up -d
+ExecStart=/usr/bin/sudo /usr/bin/docker start shuffle-orborus
+Restart=on-failure
+RestartSec=10
+TimeoutStartSec=120
+[Install]
+WantedBy=multi-user.target

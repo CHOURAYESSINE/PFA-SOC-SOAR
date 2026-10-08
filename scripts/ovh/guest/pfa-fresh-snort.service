@@ -1,0 +1,12 @@
+[Unit]
+Description=PFA reconstructed Snort
+Wants=network-online.target
+After=network-online.target
+StartLimitIntervalSec=0
+[Service]
+ExecStart=/usr/sbin/snort -q -A fast -c /home/ubuntu/pfa-live.conf -i ens4 -l /var/log/snort
+Restart=always
+RestartSec=5
+TimeoutStopSec=15
+[Install]
+WantedBy=multi-user.target

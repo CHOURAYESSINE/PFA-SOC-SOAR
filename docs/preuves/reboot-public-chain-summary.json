@@ -1,0 +1,19 @@
+{
+  "fresh_lab": true,
+  "public_http_before": 200,
+  "snort_sid": 1003,
+  "workflow_status": "FINISHED",
+  "workflow_actions_success": 3,
+  "postgres_matching_incidents": 2,
+  "public_http_after_block": 0,
+  "gmail_sent_in_fresh_lab": false,
+  "source_preserved": true,
+  "after_final_host_reboot": true,
+  "alert_after_host_boot": true,
+  "public_http_restored": 200,
+  "incidents_before": 2,
+  "incidents_after": 3,
+  "new_incidents": 1,
+  "verified_at_utc": "2026-10-08T20:27:00Z",
+  "public_test_port_closed": true
+}

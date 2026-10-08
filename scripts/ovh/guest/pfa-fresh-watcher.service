@@ -1,0 +1,13 @@
+[Unit]
+Description=PFA reconstructed alert watcher
+Wants=network-online.target pfa-fresh-snort.service
+After=network-online.target pfa-fresh-snort.service
+StartLimitIntervalSec=0
+[Service]
+EnvironmentFile=/etc/pfa-watcher.env
+ExecStart=/bin/bash /usr/local/bin/pfa-watcher.sh
+Restart=always
+RestartSec=5
+TimeoutStopSec=10
+[Install]
+WantedBy=multi-user.target

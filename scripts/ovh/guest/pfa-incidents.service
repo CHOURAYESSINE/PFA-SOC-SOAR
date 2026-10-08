@@ -1,0 +1,9 @@
+[Unit]
+Description=PFA fresh validation parameterized PostgreSQL receiver
+After=docker.service
+[Service]
+User=ubuntu
+ExecStart=/usr/bin/python3 /home/ubuntu/pfa-components/pfa-fresh-incident-service.py
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target

@@ -200,3 +200,7 @@ Sources : [image Canonical](https://cloud-images.ubuntu.com/releases/jammy/relea
 ## 8 octobre 2026 — Reconstruction complète et test Internet public
 
 La chaîne reconstruite et le cycle HTTP 200 → blocage → HTTP 200 sont validés. Source publique conservée, SID 1003, trois actions Shuffle réussies et un nouvel incident PostgreSQL. Les dix panneaux Grafana sont vérifiés. Le port temporaire est fermé et Bagage reste HTTP 200. Voir [la méthode et ses limites](RECONSTRUCTION.md) et [la preuve](preuves/fresh-public-chain-summary.json). Aucun deuxième courriel de test n'a été envoyé.
+
+## Vérification finale après redémarrage complet
+
+Le dernier redémarrage réel du VPS relance automatiquement les quatre VM et les réseaux. Les données sont conservées ; dix requêtes Grafana réussissent. La chaîne publique crée un incident supplémentaire (2 → 3), bloque puis rétablit l'accès HTTP. Le port public de test est fermé et Bagage répond HTTP 200. Preuves : [hôte](preuves/reboot-host-summary.json), [composants](preuves/reboot-component-health.json), [réponse après redémarrage](preuves/reboot-public-chain-summary.json). Les problèmes intermédiaires KVM et Swarm ont été corrigés avant ce contrôle final.

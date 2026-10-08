@@ -1,0 +1,20 @@
+{
+  "verified_at_utc": "2026-10-08T20:27:50Z",
+  "host_boot_id_changed": true,
+  "automatic_vm_services": {
+    "pfsense": "active",
+    "snort": "active",
+    "orchestration": "active",
+    "metasploitable": "active"
+  },
+  "bridges_restored": {
+    "pfa-wan": true,
+    "pfa-lan": true,
+    "pfa-dmz": true
+  },
+  "lab_enabled": true,
+  "mirror_restored": true,
+  "vm_ssh_loopback_only": true,
+  "public_validation_port_closed": true,
+  "bagage_http": 200
+}

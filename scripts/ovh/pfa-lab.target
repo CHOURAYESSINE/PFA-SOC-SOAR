@@ -1,0 +1,7 @@
+[Unit]
+Description=PFA reconstructed isolated SOC lab
+Requires=pfa-network.service
+Wants=pfa-vm@pfsense.service pfa-vm@snort.service pfa-vm@orchestration.service pfa-vm@metasploitable.service
+After=pfa-network.service pfa-vm@pfsense.service pfa-vm@snort.service pfa-vm@orchestration.service pfa-vm@metasploitable.service
+[Install]
+WantedBy=multi-user.target

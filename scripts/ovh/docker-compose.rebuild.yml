@@ -1,0 +1,54 @@
+version: '3.8'
+services:
+  opensearch:
+    image: opensearchproject/opensearch:3.2.0
+    container_name: shuffle-opensearch
+    environment:
+      discovery.type: single-node
+      DISABLE_SECURITY_PLUGIN: 'true'
+      DISABLE_INSTALL_DEMO_CONFIG: 'true'
+      OPENSEARCH_JAVA_OPTS: '-Xms768m -Xmx768m'
+      cluster.routing.allocation.disk.threshold_enabled: 'false'
+      node.store.allow_mmap: 'false'
+    volumes: [opensearch-data:/usr/share/opensearch/data]
+  backend:
+    image: ghcr.io/shuffle/shuffle-backend:latest
+    container_name: shuffle-backend
+    env_file: .env
+    ports: ['127.0.0.1:5001:5001']
+    volumes: ['/var/run/docker.sock:/var/run/docker.sock', './apps:/shuffle-apps', './files:/shuffle-files']
+    depends_on: [opensearch]
+  frontend:
+    image: ghcr.io/shuffle/shuffle-frontend:latest
+    container_name: shuffle-frontend
+    environment: {BACKEND_HOSTNAME: shuffle-backend}
+    ports: ['127.0.0.1:3001:80', '172.30.251.10:3001:80']
+    depends_on: [backend]
+  orborus:
+    image: ghcr.io/shuffle/shuffle-orborus:latest
+    container_name: shuffle-orborus
+    env_file: .env
+    environment:
+      BASE_URL: http://shuffle-backend:5001
+      SHUFFLE_WORKER_IMAGE: ghcr.io/shuffle/shuffle-worker:latest
+      ENVIRONMENT_NAME: Shuffle
+      ORG_ID: Shuffle
+      SHUFFLE_SWARM_CONFIG: run
+      DOCKER_API_VERSION: '1.44'
+    volumes: ['/var/run/docker.sock:/var/run/docker.sock']
+    depends_on: [backend]
+  postgres:
+    image: postgres:14
+    container_name: pfa-postgres
+    environment: {POSTGRES_DB: pfa, POSTGRES_USER: pfa, POSTGRES_PASSWORD: '${PG_PASSWORD}'}
+    volumes: [postgres-data:/var/lib/postgresql/data]
+  grafana:
+    image: grafana/grafana:13.0.2
+    container_name: pfa-grafana
+    environment: {GF_SECURITY_ADMIN_PASSWORD: '${GF_PASSWORD}'}
+    ports: ['127.0.0.1:3000:3000']
+    volumes: [grafana-data:/var/lib/grafana]
+volumes:
+  opensearch-data:
+  postgres-data:
+  grafana-data:

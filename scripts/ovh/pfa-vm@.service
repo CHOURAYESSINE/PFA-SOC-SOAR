@@ -1,0 +1,17 @@
+[Unit]
+Description=PFA reconstructed VM %i
+Requires=pfa-network.service
+After=pfa-network.service
+PartOf=pfa-lab.target
+StartLimitIntervalSec=0
+[Service]
+User=ubuntu
+SupplementaryGroups=kvm
+WorkingDirectory=/home/ubuntu/pfa-rebuild
+ExecStart=/home/ubuntu/pfa-rebuild/pfa-lab-vm.sh %i
+ExecStop=/home/ubuntu/pfa-rebuild/pfa-lab-vm-stop.py %i
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=75
+[Install]
+WantedBy=pfa-lab.target
