@@ -9,3 +9,7 @@
 - Copie de test arrêtée ; contrôle du disque après l'essai : Disk chain is consistent.
 
 Ce résultat valide la cohérence du disque et son ouverture par VMware. Il ne valide ni une reconstruction sur système vierge ni le fonctionnement applicatif de la copie restaurée. La cible Metasploitable2 de production reste distincte.
+## Vérification visuelle complémentaire
+
+La console VMware de la copie isolée affiche une connexion réussie de msfadmin, le noyau Linux 2.6.24-16-server i686 et une invite de shell. Le démarrage du système et l'ouverture de session sont donc confirmés. Les commandes automatisées de contrôle n'ont pas été saisies par VMware ; le service Apache et sa réponse HTTP locale restent non vérifiés sur cette copie.
+
