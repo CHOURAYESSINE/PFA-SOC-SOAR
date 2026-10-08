@@ -1,0 +1,179 @@
+status: done
+Running in Test mode
+
+        --== Initializing Snort ==--
+Initializing Output Plugins!
+Initializing Preprocessors!
+Initializing Plug-ins!
+Parsing Rules file "/home/ubuntu/pfa.conf"
+Tagged Packet Limit: 256
+Log directory = /var/log/snort
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+Initializing rule chains...
+WARNING: /home/ubuntu/local.rules(6) threshold (in rule) is deprecated; use detection_filter instead.
+
+15 Snort rules read
+    15 detection rules
+    0 decoder rules
+    0 preprocessor rules
+15 Option Chains linked into 6 Chain Headers
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
++-------------------[Rule Port Counts]---------------------------------------
+|             tcp     udp    icmp      ip
+|     src       0       0       0       0
+|     dst      10       0       0       0
+|     any       2       0       3       0
+|      nc       6       0       3       0
+|     s+d       0       0       0       0
++----------------------------------------------------------------------------
+
++-----------------------[detection-filter-config]------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[detection-filter-rules]-------------------------------
+| none
+-------------------------------------------------------------------------------
+
++-----------------------[rate-filter-config]-----------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[rate-filter-rules]------------------------------------
+| none
+-------------------------------------------------------------------------------
+
++-----------------------[event-filter-config]----------------------------------
+| memory-cap : 1048576 bytes
++-----------------------[event-filter-global]----------------------------------
+| none
++-----------------------[event-filter-local]-----------------------------------
+| gen-id=1      sig-id=1001       type=Threshold tracking=src count=20  seconds=2  
+| gen-id=1      sig-id=1001020    type=Threshold tracking=src count=20  seconds=5  
+| gen-id=1      sig-id=1002       type=Threshold tracking=src count=5   seconds=10 
+| gen-id=1      sig-id=1001031    type=Threshold tracking=src count=8   seconds=20 
+| gen-id=1      sig-id=1001030    type=Threshold tracking=src count=8   seconds=20 
+| gen-id=1      sig-id=1001040    type=Threshold tracking=src count=40  seconds=10 
+| gen-id=1      sig-id=1001010    type=Threshold tracking=src count=20  seconds=5  
++-----------------------[suppression]------------------------------------------
+| none
+-------------------------------------------------------------------------------
+Rule application order: pass->drop->sdrop->reject->alert->log
+Verifying Preprocessor Configurations!
+
+[ Port Based Pattern Matching Memory ]
++-[AC-BNFA Search Info Summary]------------------------------
+| Instances        : 1
+| Patterns         : 6
+| Pattern Chars    : 38
+| Num States       : 37
+| Num Match States : 6
+| Memory           :   2.56Kbytes
+|   Patterns       :   0.27K
+|   Match Lists    :   0.48K
+|   Transitions    :   1.41K
++-------------------------------------------------
+
+        --== Initialization Complete ==--
+
+   ,,_     -*> Snort! <*-
+  o"  )~   Version 2.9.15.1 GRE (Build 15125) 
+   ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
+           Copyright (C) 2014-2019 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using libpcap version 1.10.1 (with TPACKET_V3)
+           Using PCRE version: 8.39 2016-06-14
+           Using ZLIB version: 1.2.11
+
+
+Snort successfully validated the configuration!
+Snort exiting
+11/14-22:13:20.000000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.000000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.001000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.001000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.002000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.002000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.003000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.003000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.004000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.004000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.005000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.005000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.006000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.006000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.007000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.007000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.008000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.008000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.009000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.009000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.010000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.010000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.011000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.011000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.012000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.012000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.013000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.013000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.014000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.014000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.015000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.015000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.016000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.016000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.017000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.017000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.018000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.018000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.019000  [**] [1:1001010:1] ICMP ping flood detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.019000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.019000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.020000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.020000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.021000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.021000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.022000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.022000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.023000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.023000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.024000  [**] [1:1000002:2] PING vers Metasploitable detecte [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.024000  [**] [1:100001:2] ICMP ping detected [**] [Priority: 0] {ICMP} 10.1.1.20 -> 10.1.2.100
+11/14-22:13:20.044000  [**] [1:1001020:1] TCP SYN port scan detected [**] [Priority: 0] {TCP} 10.1.1.21:40000 -> 10.1.2.100:81
+11/14-22:13:20.044000  [**] [1:1001:2] Nmap SYN scan detected [**] [Priority: 0] {TCP} 10.1.1.21:40000 -> 10.1.2.100:81
+11/14-22:13:20.057000  [**] [1:1001030:1] FTP brute force detected [**] [Priority: 0] {TCP} 10.1.1.22:40000 -> 10.1.2.100:21
+11/14-22:13:20.066000  [**] [1:1001031:1] SSH brute force detected [**] [Priority: 0] {TCP} 10.1.1.23:40000 -> 10.1.2.100:22
+11/14-22:13:20.072000  [**] [1:1002:2] Telnet brute force detected [**] [Priority: 0] {TCP} 10.1.1.24:40000 -> 10.1.2.100:23
+11/14-22:13:20.093000  [**] [1:1001020:1] TCP SYN port scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-22:13:20.093000  [**] [1:1001:2] Nmap SYN scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-22:13:21.013000  [**] [1:1001040:1] HTTP flood detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-22:13:21.013000  [**] [1:1001020:1] TCP SYN port scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-22:13:21.013000  [**] [1:1001:2] Nmap SYN scan detected [**] [Priority: 0] {TCP} 10.1.1.25:40000 -> 10.1.2.100:80
+11/14-22:13:21.015000  [**] [1:1003:2] SQL injection OR 1=1 [**] [Priority: 0] {TCP} 10.1.1.26:40000 -> 10.1.2.100:80
+11/14-22:13:21.016000  [**] [1:1001041:1] SQL injection OR 1 equals 1 [**] [Priority: 0] {TCP} 10.1.1.27:40000 -> 10.1.2.100:80
+11/14-22:13:21.017000  [**] [1:1004:2] SQL injection union select [**] [Priority: 0] {TCP} 10.1.1.28:40000 -> 10.1.2.100:80
+11/14-22:13:21.018000  [**] [1:1005:2] SQLmap scan detected [**] [Priority: 0] {TCP} 10.1.1.29:40000 -> 10.1.2.100:80
+11/14-22:13:21.019000  [**] [1:1001042:1] Web XSS attempt detected [**] [Priority: 0] {TCP} 10.1.1.30:40000 -> 10.1.2.100:80
+11/14-22:13:21.020000  [**] [1:1001043:1] Command injection attempt detected [**] [Priority: 0] {TCP} 10.1.1.31:40000 -> 10.1.2.100:80
+---VERSIONS---
+
+   ,,_     -*> Snort! <*-
+  o"  )~   Version 2.9.15.1 GRE (Build 15125) 
+   ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
+           Copyright (C) 2014-2019 Cisco and/or its affiliates. All rights reserved.
+           Copyright (C) 1998-2013 Sourcefire, Inc., et al.
+           Using libpcap version 1.10.1 (with TPACKET_V3)
+           Using PCRE version: 8.39 2016-06-14
+           Using ZLIB version: 1.2.11
+
+PRETTY_NAME="Ubuntu 22.04.5 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.5 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+UBUNTU_CODENAME=jammy
+3f3342e0e99849d184d97eca0f990e9d

@@ -18,6 +18,7 @@
 | Restauration isolée Metasploitable2 | Démarrage, connexion et réponse web locale confirmés ; sauvegarde préconfigurée |
 | Initiateur OVH par tunnel SSH privé | Validé : détection SQL, +1 incident, blocage et rétablissement ; source vue par Snort = Kali |
 | Internet public entrant vers le laboratoire | Non testé ; le WAN validé est un réseau privé |
+| Reconstruction Snort sur une VM neuve OVH | Validée : configuration correcte, 15 SID/15, cas témoin sans alerte |
 | Reconstruction complète sur des VM vierges | Non testée ; les imports de composants ne constituent pas cette validation |
 
 Les preuves et méthodes figurent dans [VALIDATION.md](VALIDATION.md) et [preuves/](preuves/). Les anciennes sections de VALIDATION.md décrivent les problèmes rencontrés avant leur réparation ; elles ne représentent pas l'état final.

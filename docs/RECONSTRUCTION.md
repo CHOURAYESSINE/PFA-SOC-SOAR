@@ -39,3 +39,14 @@ Exporter le workflow depuis Shuffle, le dashboard JSON depuis Grafana, la config
 Le test validé utilise une interface supplémentaire bridgée dans Kali, sur le même segment Ethernet que le WAN de pfSense. L'adresse de test est 192.168.1.200/24 ; le WAN existant est 192.168.1.34. Vérifier que cette adresse est libre avant réutilisation et adapter les adresses à votre laboratoire. L'interface LAN de Kali reste séparée. NetworkManager ne doit pas retirer l'adresse de test pendant le scénario. La redirection TCP/80 mène à la cible DMZ 10.1.2.100.
 
 Les résultats de détection, blocage et retour à HTTP 200 après nettoyage sont détaillés dans VALIDATION.md. Ne pas confondre cette entrée WAN privée avec une exposition sur Internet public.
+## Reconstruction du capteur sur une VM neuve — 8 octobre 2026
+
+Une VM KVM séparée a été créée sur OVH depuis l'image officielle Ubuntu 22.04.5 LTS publiée le 4 octobre 2026. Son SHA-256 a été comparé au manifeste officiel. Aucun disque de sauvegarde ni configuration privée du capteur existant n'a été importé. Ressources : 2 vCPU, 1536 Mo, disque qcow2 de 12 Go ; SSH lié exclusivement à 127.0.0.1:22221 sur l'hôte. La VM a été arrêtée après validation, ses fichiers sont conservés dans /home/ubuntu/pfa-rebuild sur le VPS.
+
+Snort 2.9.15.1 a été installé depuis les paquets Ubuntu. La configuration minimale et les règles viennent du dépôt. Validation snort -T réussie ; 15 SID sur 15 observés à la lecture du PCAP synthétique ; aucun événement pour la source témoin 10.1.1.90. Les checksums sont désactivés uniquement pour ce PCAP artificiel. Bagage répond toujours HTTP 200 après arrêt de la VM.
+
+Cette preuve couvre une reconstruction neuve du capteur ; elle ne remplace pas une reconstruction complète pfSense + Shuffle/PostgreSQL/Grafana + cible. Le test de la chaîne opérationnelle demeure celui du laboratoire existant.
+
+Preuves : [résumé](preuves/fresh-snort-summary.json), [sortie Snort et OS](preuves/fresh-snort-proof.txt). Scripts : scripts/create_fresh_snort_vm.sh et scripts/validate_fresh_snort_vm.sh. Ils sont spécifiques à un hôte Ubuntu avec KVM et utilisent /home/ubuntu/pfa-rebuild ; le premier installe les outils QEMU et refuse d'écraser un disque déjà présent.
+
+Sources : [image Canonical](https://cloud-images.ubuntu.com/releases/jammy/release-20261004/), [paquet Snort Ubuntu](https://packages.ubuntu.com/jammy/snort).

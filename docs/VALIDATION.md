@@ -184,3 +184,15 @@ Une requête SQL de test a été lancée depuis le VPS vers un port temporaire l
 Résultats : HTTP 200 avant ; workflow FINISHED avec trois actions SUCCESS ; incidents de la source 6 → 7 ; HTTP 000 et expiration après blocage ; HTTP 200 après rétablissement. Gmail était temporairement désactivé et le workflow original a été restauré. Le tunnel, sa clé temporaire et sa route ont été retirés. Le service Bagage du VPS répond HTTP 200 avant et après le test.
 
 Preuves : [exécution et incident](preuves/ovh-tunnel-summary.json), [requête](preuves/ovh-tunnel-trigger.txt), [blocage distant](preuves/ovh-tunnel-blocked.txt), [rétablissement et Bagage](preuves/ovh-tunnel-restored.txt).
+
+## Reconstruction du capteur sur une VM neuve — 8 octobre 2026
+
+Une VM KVM séparée a été créée sur OVH depuis l'image officielle Ubuntu 22.04.5 LTS publiée le 4 octobre 2026. Son SHA-256 a été comparé au manifeste officiel. Aucun disque de sauvegarde ni configuration privée du capteur existant n'a été importé. Ressources : 2 vCPU, 1536 Mo, disque qcow2 de 12 Go ; SSH lié exclusivement à 127.0.0.1:22221 sur l'hôte. La VM a été arrêtée après validation, ses fichiers sont conservés dans /home/ubuntu/pfa-rebuild sur le VPS.
+
+Snort 2.9.15.1 a été installé depuis les paquets Ubuntu. La configuration minimale et les règles viennent du dépôt. Validation snort -T réussie ; 15 SID sur 15 observés à la lecture du PCAP synthétique ; aucun événement pour la source témoin 10.1.1.90. Les checksums sont désactivés uniquement pour ce PCAP artificiel. Bagage répond toujours HTTP 200 après arrêt de la VM.
+
+Cette preuve couvre une reconstruction neuve du capteur ; elle ne remplace pas une reconstruction complète pfSense + Shuffle/PostgreSQL/Grafana + cible. Le test de la chaîne opérationnelle demeure celui du laboratoire existant.
+
+Preuves : [résumé](preuves/fresh-snort-summary.json), [sortie Snort et OS](preuves/fresh-snort-proof.txt). Scripts : scripts/create_fresh_snort_vm.sh et scripts/validate_fresh_snort_vm.sh. Ils sont spécifiques à un hôte Ubuntu avec KVM et utilisent /home/ubuntu/pfa-rebuild ; le premier installe les outils QEMU et refuse d'écraser un disque déjà présent.
+
+Sources : [image Canonical](https://cloud-images.ubuntu.com/releases/jammy/release-20261004/), [paquet Snort Ubuntu](https://packages.ubuntu.com/jammy/snort).

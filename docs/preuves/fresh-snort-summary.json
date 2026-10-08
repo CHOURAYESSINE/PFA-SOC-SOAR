@@ -1,0 +1,42 @@
+{
+  "fresh_vm": true,
+  "image_sha256_verified": true,
+  "expected_sids": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    100001,
+    1000002,
+    1001010,
+    1001020,
+    1001030,
+    1001031,
+    1001040,
+    1001041,
+    1001042,
+    1001043
+  ],
+  "observed_sids": [
+    1001,
+    1002,
+    1003,
+    1004,
+    1005,
+    100001,
+    1000002,
+    1001010,
+    1001020,
+    1001030,
+    1001031,
+    1001040,
+    1001041,
+    1001042,
+    1001043
+  ],
+  "matched": 15,
+  "normal_source_alerted": false,
+  "test": "offline synthetic PCAP, checksums disabled",
+  "full_lab_reconstruction": false
+}
