@@ -113,3 +113,12 @@ Le scénario stabilisé a donné les résultats suivants :
 | Après restauration de l'alias initial | HTTP 200, code curl 0 |
 
 L'entrée de déduplication de la source a été nettoyée et l'action Gmail du workflow a été restaurée. Aucun courriel n'a été envoyé. Voir preuves/wan-validation.json et les sorties pfa-wan-*.txt. Le cas qui était en attente est désormais validé pour le WAN privé du laboratoire ; il ne constitue pas un test depuis Internet public.
+## Validation Gmail autorisée — 8 octobre 2026
+
+Une copie distincte du workflow, sans déclencheur et avec uniquement l'action Gmail, a été créée pour adresser un courriel unique de test à l'adresse autorisée. Une seule exécution a été lancée. Le workflow de réponse réseau original n'a pas été modifié.
+
+L'exécution a terminé avec une réponse applicative success=false : délai d'attente de 300 secondes. Le statut d'action SUCCESS affiché par Shuffle ne constitue donc pas une preuve d'envoi.
+
+Diagnostic et réparation : la route par défaut de shuffle_grafana privilégiait pfSense et une ancienne passerelle WAN. Une route de priorité supérieure via le NAT VMware existant a été ajoutée après sauvegarde des routes. Les endpoints HTTPS Gmail et OAuth répondent désormais (404 attendu sur leur racine), ce qui valide DNS et accès HTTPS. Cette route ajoutée est active en mémoire ; sa persistance après redémarrage n'a pas été configurée.
+
+La vérification ciblée de l'API Gmail avec l'authentification de l'action renvoie HTTP 401. Le jeton n'est pas accepté et le compte Gmail doit être reconnecté dans Shuffle. Aucun envoi réussi ni réception n'est annoncé. Aucune nouvelle exécution d'envoi n'a été lancée pour éviter un doublon. Le test attend la reconnexion du compte.

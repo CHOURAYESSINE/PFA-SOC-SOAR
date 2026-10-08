@@ -1,0 +1,12 @@
+{
+  "successful_delivery_verified": false,
+  "next_step": "Reconnect Gmail authentication in Shuffle",
+  "date": "2026-10-08",
+  "gmail_auth_verification_http": 401,
+  "action_status": "SUCCESS",
+  "application_success": false,
+  "workflow_status": "FINISHED",
+  "executions_launched": 1,
+  "google_https_reachable_after_route_repair": true,
+  "application_reason": "API timeout"
+}
