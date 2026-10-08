@@ -8,5 +8,6 @@
   "workflow_status": "FINISHED",
   "executions_launched": 1,
   "google_https_reachable_after_route_repair": true,
-  "application_reason": "API timeout"
+  "application_reason": "API timeout",
+  "authentication_verification_method": "Shuffle Gmail app authenticated targeted read; Google response 401 UNAUTHENTICATED invalid_token"
 }
