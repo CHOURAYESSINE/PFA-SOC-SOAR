@@ -50,3 +50,28 @@ Cette preuve couvre une reconstruction neuve du capteur ; elle ne remplace pas u
 Preuves : [résumé](preuves/fresh-snort-summary.json), [sortie Snort et OS](preuves/fresh-snort-proof.txt). Scripts : scripts/create_fresh_snort_vm.sh et scripts/validate_fresh_snort_vm.sh. Ils sont spécifiques à un hôte Ubuntu avec KVM et utilisent /home/ubuntu/pfa-rebuild ; le premier installe les outils QEMU et refuse d'écraser un disque déjà présent.
 
 Sources : [image Canonical](https://cloud-images.ubuntu.com/releases/jammy/release-20261004/), [paquet Snort Ubuntu](https://packages.ubuntu.com/jammy/snort).
+
+## Reconstruction complète et entrée Internet publique — 8 octobre 2026
+
+Une installation indépendante fonctionne sur le VPS OVH, dans `/home/ubuntu/pfa-rebuild`. Aucun disque de sauvegarde du laboratoire existant n'a servi à cette reconstruction. Deux VM Ubuntu ont été créées depuis l'image Canonical contrôlée par SHA-256 ; pfSense CE 2.7.2 a été installé sur un disque vierge depuis l'image officielle Netgate, également contrôlée. La cible est une copie neuve de l'image officielle Metasploitable2, dont l'intégrité ZIP a été vérifiée ; il s'agit d'une image système préinstallée, pas d'une installation de Linux depuis zéro.
+
+| Composant | Réseau isolé | Ressources VM |
+|---|---|---|
+| pfSense | WAN 172.30.250.2, LAN 172.30.251.2, DMZ 172.30.252.2 | 2 vCPU, 768 Mo, 8 Go |
+| Shuffle, PostgreSQL, Grafana | LAN 172.30.251.10 | 2 vCPU, 3072 Mo, 24 Go |
+| Snort et watcher | DMZ 172.30.252.102 | 1 vCPU, 768 Mo, 12 Go |
+| Metasploitable2 | DMZ 172.30.252.100 | 1 vCPU, 256 Mo |
+
+Les bridges QEMU `pfa-wan`, `pfa-lan`, `pfa-dmz` séparent les segments. Le trafic sortant du port DMZ de pfSense est recopié vers le capteur avec `tc mirred`. Les accès SSH des deux VM Ubuntu sont liés à localhost sur le VPS (22221 et 22222). Les mots de passe et clés sont propres à cette installation et restent hors Git.
+
+PostgreSQL 14 utilise le schéma du dépôt. Grafana 13.0.2 a importé le dashboard avec une nouvelle datasource : les dix requêtes ont retourné HTTP 200. Shuffle a importé le modèle puis exécuté un workflow réel avec ses workers. La chaîne reconstruite comprend trois actions : PATCH de l'alias pfSense, POST d'application du pare-feu, POST vers un récepteur d'incidents PostgreSQL. Le récepteur [`fresh_incident_receiver.py`](../scripts/fresh_incident_receiver.py) contrôle un token, l'IPv4 et le SID puis utilise une requête SQL paramétrée. Son environnement et son token doivent être provisionnés localement ; il n'est pas accessible depuis Internet. Les accès REST pfSense utilisent son certificat autosigné sur le LAN isolé.
+
+Le bootstrap [`fresh-lab-bootstrap.php`](../pfsense/fresh-lab-bootstrap.php) initialise les trois interfaces, l'alias et les règles NAT/filtrage d'une **nouvelle** installation ; il remplace les règles et ne doit pas être appliqué au pare-feu existant. Ajouter ensuite la règle DMZ autorisant uniquement Snort vers Shuffle TCP/3001, installer le paquet REST API 2.4.3 adapté à pfSense 2.7.2 et provisionner les identifiants. Ce fichier est un élément de reconstruction, pas un installateur complet automatisé.
+
+Le test public a ouvert temporairement TCP/18081 sur le VPS, exclusivement pour l'adresse publique du PC. Une DNAT sans SNAT d'entrée conduit vers pfSense WAN TCP/80, puis vers la cible DMZ. Une seule requête HTTP avec une signature SQL a produit SID 1003, une exécution Shuffle FINISHED avec trois actions SUCCESS/HTTP 200, et un nouvel incident contenant la même adresse source que le PC. Le cycle observé est HTTP 200, blocage (HTTP 000/expiration), puis HTTP 200 après suppression de l'adresse dans l'alias. La redirection publique et le serveur HTTP de bootstrap ont ensuite été supprimés/arrêtés. Bagage est resté HTTP 200.
+
+Les VM et données reconstruites sont conservées. Les conteneurs principaux ont une politique de redémarrage et le récepteur d'incidents est activé dans systemd. Le redémarrage complet du VPS et la restauration automatique des bridges/QEMU n'ont pas été testés : leur création actuelle relève de la session de laboratoire. Ne pas interpréter cette validation comme une exposition permanente ou un déploiement de production. Aucun nouveau courriel n'a été envoyé : la preuve Gmail demeure celle du laboratoire initial.
+
+Preuves : [chaîne publique](preuves/fresh-public-chain-summary.json), [PostgreSQL et Grafana](preuves/fresh-data-summary.json), [premier test Shuffle](preuves/fresh-shuffle-summary.json). Les champs `full_lab_reconstruction: false` des deux derniers résumés décrivent leur étape individuelle antérieure ; la preuve de chaîne publique complète ces contrôles.
+
+Sources des systèmes : [Canonical](https://cloud-images.ubuntu.com/releases/jammy/release-20261004/), [Netgate](https://atxfiles.netgate.com/mirror/downloads/), [Metasploitable2 officiel](https://sourceforge.net/projects/metasploitable/files/Metasploitable2/), [REST API pfSense](https://pfrest.org/INSTALL_AND_CONFIG/).

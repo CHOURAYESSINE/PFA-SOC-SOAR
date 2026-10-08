@@ -196,3 +196,7 @@ Cette preuve couvre une reconstruction neuve du capteur ; elle ne remplace pas u
 Preuves : [résumé](preuves/fresh-snort-summary.json), [sortie Snort et OS](preuves/fresh-snort-proof.txt). Scripts : scripts/create_fresh_snort_vm.sh et scripts/validate_fresh_snort_vm.sh. Ils sont spécifiques à un hôte Ubuntu avec KVM et utilisent /home/ubuntu/pfa-rebuild ; le premier installe les outils QEMU et refuse d'écraser un disque déjà présent.
 
 Sources : [image Canonical](https://cloud-images.ubuntu.com/releases/jammy/release-20261004/), [paquet Snort Ubuntu](https://packages.ubuntu.com/jammy/snort).
+
+## 8 octobre 2026 — Reconstruction complète et test Internet public
+
+La chaîne reconstruite et le cycle HTTP 200 → blocage → HTTP 200 sont validés. Source publique conservée, SID 1003, trois actions Shuffle réussies et un nouvel incident PostgreSQL. Les dix panneaux Grafana sont vérifiés. Le port temporaire est fermé et Bagage reste HTTP 200. Voir [la méthode et ses limites](RECONSTRUCTION.md) et [la preuve](preuves/fresh-public-chain-summary.json). Aucun deuxième courriel de test n'a été envoyé.

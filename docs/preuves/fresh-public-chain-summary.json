@@ -1,0 +1,13 @@
+{
+  "fresh_lab": true,
+  "public_http_before": 200,
+  "snort_sid": 1003,
+  "workflow_status": "FINISHED",
+  "workflow_actions_success": 3,
+  "postgres_matching_incidents": 1,
+  "public_http_after_block": 0,
+  "gmail_sent_in_fresh_lab": false,
+  "source_preserved": true,
+  "public_http_restored": 200,
+  "public_test_port_closed": true
+}

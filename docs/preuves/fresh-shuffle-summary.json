@@ -1,0 +1,17 @@
+{
+  "fresh_vm": true,
+  "login_success": true,
+  "template_actions": 4,
+  "template_triggers_stopped": true,
+  "test_workflow_id": "b1aa470e-c612-4c54-8eb1-33674451c2f8",
+  "execution_id": "0c13b8bd-ccdd-442a-ae23-d78e330cb700",
+  "status": "FINISHED",
+  "actions": [
+    {
+      "status": "SUCCESS",
+      "app": "http"
+    }
+  ],
+  "gmail_sent": false,
+  "full_lab_reconstruction": false
+}

@@ -1,0 +1,61 @@
+{
+  "fresh_vm": true,
+  "postgres_schema_created": true,
+  "incident_inserted": true,
+  "grafana_version": "13.0.2",
+  "dashboard_imported": true,
+  "queries": [
+    {
+      "panel": "Total incidents",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "IPs bloquees uniques",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Derniere alerte",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Alertes High",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Chronologie des incidents",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Top types d attaques",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Top IP attaquantes",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Incidents recents",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Actions appliquees",
+      "status": 200,
+      "error": ""
+    },
+    {
+      "panel": "Volume par severite",
+      "status": 200,
+      "error": ""
+    }
+  ],
+  "all_queries_passed": true,
+  "full_lab_reconstruction": false
+}
