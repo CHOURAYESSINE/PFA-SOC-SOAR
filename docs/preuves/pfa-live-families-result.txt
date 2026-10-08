@@ -1,0 +1,88 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-10-08 10:22 EDT
+Nmap scan report for 10.1.2.100
+Host is up (0.0030s latency).
+Not shown: 94 closed tcp ports (reset)
+PORT   STATE SERVICE
+21/tcp open  ftp
+22/tcp open  ssh
+23/tcp open  telnet
+25/tcp open  smtp
+53/tcp open  domain
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 1.10 seconds
+PING 10.1.2.100 (10.1.2.100) from 10.1.1.107 eth1: 56(84) bytes of data.
+64 bytes from 10.1.2.100: icmp_seq=1 ttl=63 time=1.88 ms
+64 bytes from 10.1.2.100: icmp_seq=2 ttl=63 time=1.91 ms
+64 bytes from 10.1.2.100: icmp_seq=3 ttl=63 time=1.87 ms
+64 bytes from 10.1.2.100: icmp_seq=4 ttl=63 time=1.91 ms
+64 bytes from 10.1.2.100: icmp_seq=5 ttl=63 time=1.75 ms
+64 bytes from 10.1.2.100: icmp_seq=6 ttl=63 time=2.07 ms
+64 bytes from 10.1.2.100: icmp_seq=7 ttl=63 time=1.95 ms
+64 bytes from 10.1.2.100: icmp_seq=8 ttl=63 time=1.99 ms
+64 bytes from 10.1.2.100: icmp_seq=9 ttl=63 time=1.74 ms
+64 bytes from 10.1.2.100: icmp_seq=10 ttl=63 time=2.10 ms
+64 bytes from 10.1.2.100: icmp_seq=11 ttl=63 time=1.76 ms
+64 bytes from 10.1.2.100: icmp_seq=12 ttl=63 time=1.78 ms
+64 bytes from 10.1.2.100: icmp_seq=13 ttl=63 time=1.94 ms
+64 bytes from 10.1.2.100: icmp_seq=14 ttl=63 time=1.86 ms
+64 bytes from 10.1.2.100: icmp_seq=15 ttl=63 time=1.99 ms
+64 bytes from 10.1.2.100: icmp_seq=16 ttl=63 time=1.92 ms
+64 bytes from 10.1.2.100: icmp_seq=17 ttl=63 time=2.02 ms
+64 bytes from 10.1.2.100: icmp_seq=18 ttl=63 time=1.78 ms
+64 bytes from 10.1.2.100: icmp_seq=19 ttl=63 time=1.90 ms
+64 bytes from 10.1.2.100: icmp_seq=20 ttl=63 time=2.01 ms
+
+--- 10.1.2.100 ping statistics ---
+20 packets transmitted, 20 received, 0% packet loss, time 1912ms
+rtt min/avg/max/mdev = 1.735/1.906/2.095/0.103 ms
+[
+  {
+    "test": "bounded_connection_threshold",
+    "port": 21,
+    "connections": 8,
+    "completed": 8
+  },
+  {
+    "test": "bounded_connection_threshold",
+    "port": 22,
+    "connections": 8,
+    "completed": 8
+  },
+  {
+    "test": "bounded_connection_threshold",
+    "port": 23,
+    "connections": 5,
+    "completed": 5
+  },
+  {
+    "test": "bounded_connection_threshold",
+    "port": 80,
+    "connections": 40,
+    "completed": 40
+  },
+  {
+    "test": "sql_encoded",
+    "response": 200
+  },
+  {
+    "test": "sql_plain",
+    "response": 200
+  },
+  {
+    "test": "sql_union",
+    "response": 200
+  },
+  {
+    "test": "sqlmap_user_agent",
+    "response": 200
+  },
+  {
+    "test": "xss_signature",
+    "response": 200
+  },
+  {
+    "test": "command_signature",
+    "response": 200
+  }
+]

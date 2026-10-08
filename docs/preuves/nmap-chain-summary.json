@@ -1,0 +1,45 @@
+{
+  "incident_before": 4,
+  "incident_after": 6,
+  "started_utc": "2026-10-08T14:23:46.0000000+00:00",
+  "executions": [
+    {
+      "status": "FINISHED",
+      "id": "584a3f66-5a23-4302-9b4d-778a6f1d43c1",
+      "actions": [
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        },
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        },
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        }
+      ]
+    },
+    {
+      "status": "FINISHED",
+      "id": "468d448a-d203-4d5a-99cb-b06e643b275c",
+      "actions": [
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        },
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        },
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        }
+      ]
+    }
+  ],
+  "new_incidents": 2,
+  "gmail_send_disabled": true
+}

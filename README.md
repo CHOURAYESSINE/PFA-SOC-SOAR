@@ -36,3 +36,6 @@ Le dossier `vms/` contient quatre fichiers VMware VMX anonymisés et un manifest
 
 Le scénario avec [deux segments LAN VMware](docs/DEUX-SEGMENTS.md) a été relancé et documenté avec ses preuves.
 
+
+Les [scénarios du rapport PFA](docs/SCENARIOS-PFA.md) comprennent maintenant une couverture réelle des 15 SID et une réponse automatique vérifiée sur un scan Nmap.
+

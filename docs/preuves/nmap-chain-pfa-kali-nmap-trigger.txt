@@ -1,0 +1,13 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-10-08 10:23 EDT
+Nmap scan report for 10.1.2.100
+Host is up (0.0021s latency).
+Not shown: 94 closed tcp ports (reset)
+PORT   STATE SERVICE
+21/tcp open  ftp
+22/tcp open  ssh
+23/tcp open  telnet
+25/tcp open  smtp
+53/tcp open  domain
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 1.08 seconds
