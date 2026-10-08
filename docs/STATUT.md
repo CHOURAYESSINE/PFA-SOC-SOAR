@@ -13,6 +13,7 @@
 | Route Internet de Shuffle | Service enabled et active ; retour automatique confirmé après redémarrage de shuffle_grafana |
 | Fonctionnement après redémarrage Snort et Shuffle | Services, route et chaîne de blocage validés |
 | Sauvegardes VM | 4 disques et références contrôlés ; 3 chaînes VMDK cohérentes, cible active verrouillée |
+| Restauration isolée Metasploitable2 | Démarrage, connexion et réponse web locale confirmés ; sauvegarde préconfigurée |
 | Internet public entrant vers le laboratoire | Non testé ; le WAN validé est un réseau privé |
 | Reconstruction complète sur des VM vierges | Non testée ; les imports de composants ne constituent pas cette validation |
 

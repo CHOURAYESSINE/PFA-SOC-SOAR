@@ -155,3 +155,8 @@ Les contrôles de sauvegarde ne prouvent pas une réinstallation complète sur d
 
 Voir [la preuve et ses limites](preuves/restauration-metasploitable.md). Une copie indépendante a été ouverte par VMware sans réseau ; l'état des services invités reste à vérifier. Aucun disque de VM n'est publié.
 
+
+### Restauration Metasploitable2 : vérification du service web
+
+La console puis la capture fournie confirment le démarrage, la connexion et le contenu web local de la copie restaurée. Voir [la preuve actualisée](preuves/restauration-metasploitable.md). Le test de reconstruction complète sur systèmes vierges reste distinct.
+
