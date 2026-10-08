@@ -96,3 +96,20 @@ Ce test valide le scénario LAN → DMZ du laboratoire et son blocage effectif. 
 - **Politique WAN** : lecture API réussie ; le blocage BLOCKED_IPS précède les autorisations WAN et une redirection WAN TCP/80 vers la cible DMZ existe. Le test HTTP vers 192.168.1.34 expire ; le poste hôte n'a aucune adresse sur ce réseau. Le test WAN réel reste non validé, en attente de connectivité. Ce réseau WAN privé ne constitue pas un test Internet.
 
 Une reconstruction complète sur des VM vierges reste distincte des imports ci-dessus : elle nécessite les systèmes, applications, authentifications et interfaces décrits dans IMPORT.md et RECONSTRUCTION.md. Les notifications Gmail n'ont pas été testées par envoi.
+## Validation WAN → DMZ — 8 octobre 2026
+
+Le blocage de connectivité a été contourné en ajoutant une troisième interface bridgée à Kali, sans modifier pfSense. L'IP de test 192.168.1.200/24 permet de joindre le WAN privé 192.168.1.34 au niveau Ethernet malgré le sous-réseau différent du poste Windows. NetworkManager supprimait initialement cette adresse manuelle : l'interface de test a donc été temporairement placée hors de sa gestion. Les premiers délais d'expiration n'étaient pas des preuves de blocage.
+
+Le scénario stabilisé a donné les résultats suivants :
+
+| Contrôle | Résultat |
+|---|---|
+| HTTP vers le WAN, redirigé vers Metasploitable | 200 |
+| Requête avec le motif or+1%3D1 | Alerte Snort SID 1003, source 192.168.1.200, cible 10.1.2.100:80 |
+| Workflow original sans Gmail pendant le test | FINISHED, trois actions SUCCESS |
+| Alias pfSense | Source de test présente dans BLOCKED_IPS |
+| PostgreSQL | Un nouvel incident pour cette source dans les 15 dernières minutes |
+| Nouvelle connexion HTTP après filtrage | 000, code curl 28 |
+| Après restauration de l'alias initial | HTTP 200, code curl 0 |
+
+L'entrée de déduplication de la source a été nettoyée et l'action Gmail du workflow a été restaurée. Aucun courriel n'a été envoyé. Voir preuves/wan-validation.json et les sorties pfa-wan-*.txt. Le cas qui était en attente est désormais validé pour le WAN privé du laboratoire ; il ne constitue pas un test depuis Internet public.

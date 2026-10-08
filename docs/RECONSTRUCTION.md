@@ -24,7 +24,7 @@ Les sauvegardes comportent également des interfaces NAT, bridgées et host-only
 3. Configurer pfSense : NAT vers la DMZ, alias BLOCKED_IPS et règles de blocage sur les interfaces concernées.
 4. Installer Snort compatible avec les règles fournies, définir HOME_NET et inclure local.rules. Valider la configuration avec `snort -T -c /etc/snort/snort.conf` avant lancement.
 5. Installer Python 3 et curl sur le capteur. Définir SNORT_RELAY_URL vers le relais et lancer le watcher avec les permissions nécessaires pour lire les alertes et écrire son état.
-6. Sur le poste relais, définir SHUFFLE_WEBHOOK_URL. Le relais écoute par défaut sur 127.0.0.1 ; définir RELAY_BIND sur l'adresse du laboratoire si le capteur est distant et limiter l'accès par pare-feu. Lancer `python scripts/snort_shuffle_relay.py`.
+6. Si le relais optionnel est utilisé, définir SHUFFLE_WEBHOOK_URL sur le poste relais. Le relais écoute par défaut sur 127.0.0.1 ; définir RELAY_BIND sur l'adresse du laboratoire si le capteur est distant et limiter l'accès par pare-feu. Lancer `python scripts/snort_shuffle_relay.py`.
 7. Recréer/importer le workflow Shuffle : webhook, extraction de l'IP, mise à jour de BLOCKED_IPS, application du filtrage et enregistrement de l'incident. Configurer les authentifications dans Shuffle, jamais dans Git.
 8. Configurer PostgreSQL et sa source de données Grafana. Recréer/importer le dashboard des incidents. Consulter docs/IMPORT.md pour les fichiers fournis et la reconfiguration des sources de données.
 9. Dans le laboratoire autorisé, vérifier la chaîne : alerte Snort, réception Shuffle, mise à jour de l'alias, blocage effectif, incident enregistré et affichage Grafana. Conserver les résultats horodatés sans secrets.
@@ -33,3 +33,9 @@ Les sauvegardes comportent également des interfaces NAT, bridgées et host-only
 
 Exporter le workflow depuis Shuffle, le dashboard JSON depuis Grafana, la configuration pfSense et le schéma PostgreSQL depuis leurs interfaces. Retirer tous les mots de passe, tokens, clés privées, données personnelles et identifiants de webhook. Les fichiers VMware fournis à GitHub doivent être des modèles anonymisés, pas des sauvegardes complètes.
 
+
+## Scénario WAN privé reproduit
+
+Le test validé utilise une interface supplémentaire bridgée dans Kali, sur le même segment Ethernet que le WAN de pfSense. L'adresse de test est 192.168.1.200/24 ; le WAN existant est 192.168.1.34. Vérifier que cette adresse est libre avant réutilisation et adapter les adresses à votre laboratoire. L'interface LAN de Kali reste séparée. NetworkManager ne doit pas retirer l'adresse de test pendant le scénario. La redirection TCP/80 mène à la cible DMZ 10.1.2.100.
+
+Les résultats de détection, blocage et retour à HTTP 200 après nettoyage sont détaillés dans VALIDATION.md. Ne pas confondre cette entrée WAN privée avec une exposition sur Internet public.

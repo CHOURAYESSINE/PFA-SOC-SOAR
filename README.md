@@ -25,7 +25,7 @@ Les endpoints privés ont été remplacés par des variables d'environnement. Le
 
 ## Statut
 
-Ce dépôt documente le laboratoire existant et conserve les scripts retrouvés. Il ne constitue pas une installation entièrement automatique. Les modèles anonymisés Shuffle et pfSense, le dashboard Grafana et un schéma SQL reconstruit sont inclus. Voir `docs/IMPORT.md` pour leur configuration et leurs limites. La chaîne réelle Kali → Snort → Shuffle → pfSense → PostgreSQL a été validée en laboratoire : HTTP 200 avant le test, blocage du trafic après détection et HTTP 200 après nettoyage. Deux nouveaux incidents ont été enregistrés. Voir [les résultats et limites](docs/VALIDATION.md#validation-réelle-de-la-chaîne--8-octobre-2026).
+Ce dépôt documente le laboratoire existant et conserve les scripts retrouvés. Il ne constitue pas une installation entièrement automatique. Les modèles anonymisés Shuffle et pfSense, le dashboard Grafana et un schéma SQL reconstruit sont inclus. Voir `docs/IMPORT.md` pour leur configuration et leurs limites. La chaîne réelle Kali → Snort → Shuffle → pfSense → PostgreSQL a été validée en laboratoire : HTTP 200 avant le test, blocage du trafic après détection et HTTP 200 après nettoyage. Deux incidents ont été enregistrés lors du scénario LAN ; le scénario WAN privé avec motif SQL a également validé la détection, le blocage et un nouvel incident. Voir [les résultats et limites](docs/VALIDATION.md#validation-réelle-de-la-chaîne--8-octobre-2026).
 
 
 ## Définitions des VM
