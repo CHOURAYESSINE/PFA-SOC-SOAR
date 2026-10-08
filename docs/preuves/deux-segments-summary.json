@@ -1,0 +1,27 @@
+{
+  "executions": [
+    {
+      "actions": [
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        },
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        },
+        {
+          "status": "SUCCESS",
+          "app": "http"
+        }
+      ],
+      "status": "FINISHED",
+      "id": "7c1ba1be-1186-4ea5-80e1-c1b78dde366e"
+    }
+  ],
+  "gmail_send_disabled": true,
+  "incident_before": 2,
+  "new_incidents": 2,
+  "incident_after": 4,
+  "started_utc": "2026-10-08T13:50:07.0000000+00:00"
+}

@@ -160,3 +160,8 @@ Voir [la preuve et ses limites](preuves/restauration-metasploitable.md). Une cop
 
 La console puis la capture fournie confirment le démarrage, la connexion et le contenu web local de la copie restaurée. Voir [la preuve actualisée](preuves/restauration-metasploitable.md). Le test de reconstruction complète sur systèmes vierges reste distinct.
 
+
+## Nouvelle validation entre deux segments LAN
+
+Le scénario interne a été relancé avec succès : HTTP 200, alertes Snort, trois actions réussies, deux nouveaux incidents, blocage puis HTTP 200 après nettoyage. Voir [l'architecture et les preuves](DEUX-SEGMENTS.md).
+

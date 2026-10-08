@@ -1,0 +1,6 @@
+[2KDevice 'eth1' successfully activated with '4b0569d0-2f80-3539-ae07-f244f6dcabaf'.
+lo               UNKNOWN        127.0.0.1/8 
+eth0             UP             192.168.233.129/24 
+eth1             UP             10.1.1.107/24 
+eth2             UP             192.168.1.200/24 
+Baseline HTTP 200

@@ -33,3 +33,6 @@ Ce dépôt documente le laboratoire existant et conserve les scripts retrouvés.
 ## Définitions des VM
 
 Le dossier `vms/` contient quatre fichiers VMware VMX anonymisés et un manifeste des disques. Les disques VMDK restent dans la sauvegarde locale : voir `vms/README.md` avant utilisation. Les résultats de tests réels sont dans `docs/VALIDATION.md`.
+
+Le scénario avec [deux segments LAN VMware](docs/DEUX-SEGMENTS.md) a été relancé et documenté avec ses preuves.
+
