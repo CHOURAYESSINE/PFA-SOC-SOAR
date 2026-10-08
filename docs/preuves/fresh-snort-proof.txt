@@ -46,13 +46,13 @@ WARNING: /home/ubuntu/local.rules(6) threshold (in rule) is deprecated; use dete
 +-----------------------[event-filter-global]----------------------------------
 | none
 +-----------------------[event-filter-local]-----------------------------------
-| gen-id=1      sig-id=1001       type=Threshold tracking=src count=20  seconds=2  
-| gen-id=1      sig-id=1001020    type=Threshold tracking=src count=20  seconds=5  
-| gen-id=1      sig-id=1002       type=Threshold tracking=src count=5   seconds=10 
-| gen-id=1      sig-id=1001031    type=Threshold tracking=src count=8   seconds=20 
-| gen-id=1      sig-id=1001030    type=Threshold tracking=src count=8   seconds=20 
-| gen-id=1      sig-id=1001040    type=Threshold tracking=src count=40  seconds=10 
-| gen-id=1      sig-id=1001010    type=Threshold tracking=src count=20  seconds=5  
+| gen-id=1      sig-id=1001       type=Threshold tracking=src count=20  seconds=2
+| gen-id=1      sig-id=1001020    type=Threshold tracking=src count=20  seconds=5
+| gen-id=1      sig-id=1002       type=Threshold tracking=src count=5   seconds=10
+| gen-id=1      sig-id=1001031    type=Threshold tracking=src count=8   seconds=20
+| gen-id=1      sig-id=1001030    type=Threshold tracking=src count=8   seconds=20
+| gen-id=1      sig-id=1001040    type=Threshold tracking=src count=40  seconds=10
+| gen-id=1      sig-id=1001010    type=Threshold tracking=src count=20  seconds=5
 +-----------------------[suppression]------------------------------------------
 | none
 -------------------------------------------------------------------------------
@@ -75,7 +75,7 @@ Verifying Preprocessor Configurations!
         --== Initialization Complete ==--
 
    ,,_     -*> Snort! <*-
-  o"  )~   Version 2.9.15.1 GRE (Build 15125) 
+  o"  )~   Version 2.9.15.1 GRE (Build 15125)
    ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
            Copyright (C) 2014-2019 Cisco and/or its affiliates. All rights reserved.
            Copyright (C) 1998-2013 Sourcefire, Inc., et al.
@@ -156,7 +156,7 @@ Snort exiting
 ---VERSIONS---
 
    ,,_     -*> Snort! <*-
-  o"  )~   Version 2.9.15.1 GRE (Build 15125) 
+  o"  )~   Version 2.9.15.1 GRE (Build 15125)
    ''''    By Martin Roesch & The Snort Team: http://www.snort.org/contact#team
            Copyright (C) 2014-2019 Cisco and/or its affiliates. All rights reserved.
            Copyright (C) 1998-2013 Sourcefire, Inc., et al.
