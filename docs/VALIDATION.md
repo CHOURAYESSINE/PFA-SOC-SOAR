@@ -176,3 +176,11 @@ Preuve : [sortie-internet-usb-shuffle.txt](preuves/sortie-internet-usb-shuffle.t
 
 Les 15 SID ont été observés sur trafic réel borné entre les deux segments. Un scan Nmap séparé a également validé la chaîne de réponse avec deux nouveaux incidents et un blocage effectif. Voir [méthode, preuves et limites](SCENARIOS-PFA.md).
 
+
+## Test depuis le VPS OVH par tunnel SSH — 8 octobre 2026
+
+Une requête SQL de test a été lancée depuis le VPS vers un port temporaire lié uniquement à son adresse loopback, puis transportée par SSH vers Kali et la cible DMZ à travers pfSense. Aucune cible vulnérable n'a été ouverte publiquement. Snort voit la source LAN de Kali (10.1.1.107), pas l'adresse publique du VPS : ce test valide un initiateur distant et la chaîne LAN/DMZ, pas un filtrage WAN public conservant la source Internet.
+
+Résultats : HTTP 200 avant ; workflow FINISHED avec trois actions SUCCESS ; incidents de la source 6 → 7 ; HTTP 000 et expiration après blocage ; HTTP 200 après rétablissement. Gmail était temporairement désactivé et le workflow original a été restauré. Le tunnel, sa clé temporaire et sa route ont été retirés. Le service Bagage du VPS répond HTTP 200 avant et après le test.
+
+Preuves : [exécution et incident](preuves/ovh-tunnel-summary.json), [requête](preuves/ovh-tunnel-trigger.txt), [blocage distant](preuves/ovh-tunnel-blocked.txt), [rétablissement et Bagage](preuves/ovh-tunnel-restored.txt).
