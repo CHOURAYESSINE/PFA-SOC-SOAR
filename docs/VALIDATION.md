@@ -151,3 +151,7 @@ Le contrôle scripts/check_vm_backups.py confirme, pour les quatre VM : présenc
 VMware vdiskmanager -e confirme la cohérence des chaînes des sauvegardes pfSense, Shuffle/Grafana et Snort. Le disque Metasploitable est utilisé par la VM cible active : le verrou empêche ce contrôle hors ligne. La tentative d'arrêt gracieux sans VMware Tools n'a pas abouti ; seule la requête de gestion bloquée a été annulée, la VM a été conservée en fonctionnement. Ce verrou ne permet pas de conclure à une corruption.
 
 Les contrôles de sauvegarde ne prouvent pas une réinstallation complète sur des OS vierges. Aucun ISO d'installation complet n'a été identifié dans les sauvegardes examinées ; le poste dispose d'environ 2,9 Go de RAM libre, insuffisants pour démarrer en parallèle un second laboratoire aux ressources publiées. Le test Internet public reste en attente d'une adresse publique ou d'un domaine redirigé vers pfSense.
+## Essai de restauration isolée Metasploitable2 — 8 octobre 2026
+
+Voir [la preuve et ses limites](preuves/restauration-metasploitable.md). Une copie indépendante a été ouverte par VMware sans réseau ; l'état des services invités reste à vérifier. Aucun disque de VM n'est publié.
+
